@@ -1,4 +1,16 @@
-  upper = \relative c' {
+\version "2.18.2"
+\include "articulate.ly"
+#(set-global-staff-size 15)
+
+% TODO
+% merge rests from two voices, hide rest for solo at first verse?
+% add lyrics
+% add phrasing slur for voices
+% fingering position, e.g. episode
+% left right hand distribution of first verse, and bar 16? (switch? to try)
+% dynamics
+
+upper = \relative c' {
   \clef treble \key e \major \time 4/4 \tempo 4 = 108
   
   <a' e' b'>8\arpeggio a' gis e~ e2
@@ -113,8 +125,8 @@
   <c f>4_"rit." c' c d
   e f c' g'~
   g1 \bar "|."
-  
 }
+
 lower = \relative c {
   \clef bass \key e \major \time 4/4
 
@@ -229,8 +241,10 @@ lower = \relative c {
   g,~
   g \bar "|."
 }
+
+melodyf = \relative c' {
   \clef treble \key e \major \time 4/4
-\override Script #'padding = #2
+  \override Script #'padding = #2
 
   R1 R1 R1 R1 R1 R1
 
@@ -256,9 +270,40 @@ lower = \relative c {
     g c, c c' c b c b b4. a8 a4 r4 r2 r4 r8 b g4 b a8 g e f~ f g4.~ g2
     r4 f8 e f e4. c8 c4.~ c2 R1 r4 g'8 g a c4.~ c8 b c2. R1 R1 R1 R1 \bar "|."
 }
+
 lyricsf = \lyricmode {
 %\addlyrics {
-\set stanza = #"å¥³:"
+  \set stanza = #"女:"
+  從 前 有 個 男 孩 夜 裡 說 想 約 我 於 森 林 見 面
+  原 訂 說 愛 談 情 卻 碰 巧 天 氣 轉 差 颳 風 閃 電
+  然 後 對 話 似 被 風 雨 間 斷
+  被 雨 打 濕 了 的 手 只 懂 抖 顫 難 道 你 是 仙 子
+  與 我 不 相 襯 累 你 受 盡 天 譴
+  亂 唱 的 歌 也 覺 悅 耳
+  害 怕 這 樣 會 很 留 戀
+  卻 怕 與 你 沒 法 一 起 蛻 變
+  若 然 開 始 怎 樣 可 免 悲 劇 上 演
+  流 露 傷 感 的 你 只 顧 遠 望
+  在 說 有 天 你 將 會 飛 得 很 遠
+  你 會 飛 返 我 身 邊
+  陪 你 活 過 一 天 陪 你 坐 過 飛 氈
+  陪 你 令 我 輕 鬆 也 令 我 極 度 心 思 紊 亂
+  亂 拍 的 拖 我 也 願 試
+  害 怕 這 樣 會 很 留 戀
+  陪 你 渡 過 春 天 陪 你 渡 過 秋 天
+  陪 你 直 到 冬 天
+  我 怕 與 你 沒 法 一 起 蛻 變
+  怎 樣 可 免 悲 劇 上 演
+  陪 你 活 過 這 天 無 法 坐 上 飛 氈
+  情 況 令 我 心 酸
+  也 令 我 極 度 思 想 錯 亂
+  為 了 遮 掩 眼 角 淚 濕 了
+  結 果 證 實 我 很 留 戀
+  陪 你 渡 過 春 天 陪 你 渡 過 秋 天
+  難 過 度 到 冬 天 你 我 到 最 後 說 不 出 再 見
+  假 若 知 道 悲 劇 要 演
+  我 就 不 應 抱 怨
+  能 回 味 也 是 暖
 }
 
 melodym = \relative c' {
@@ -287,44 +332,36 @@ melodym = \relative c' {
 }
 
 lyricsm = \lyricmode {
-\set stanza = #"ç·:"
+\set stanza = #"男:"
 %\addlyrics {
-éª ä½  æ´» é ä¸ å¤© éª ä½  å é é£ æ°
-éª ä½  ä»¤ æ è¼ é¬ ä¹ ä»¤ æ æ¥µ åº¦ å¿ æ ç´ äº
-äº æ ç æ æ ä¹ é¡ è©¦
-å®³ æ é æ¨£ æ å¾ ç æ
-éª ä½  æ¸¡ é æ¥ å¤© éª ä½  æ¸¡ é ç§ å¤© éª ä½  ç´ å° å¬ å¤©
-å» æ è ä½  æ² æ³ ä¸ èµ· è» è®
-æ æ¨£ å¯ å æ² å ä¸ æ¼
-
-\once \override LyricText #'self-alignment-X = #1 "(ç·:) å" æ¨ è ä½  ç´° èª è©³ è« èªª èµ· ä¸ é ç æ æ å¹¼ å«©
-ç¶ è æ å» æ¬ é ­ ç æ»¿ å¤© æ å®¿ æ² é» ç¨ å¿ è¨± é¡
-
-æµ é² å· æ ç ç¼ åª æ å° æ
-å®³ æ æ å¤© æ å° æ é£ å¾ å¾ é 
-é£ é å¨ ä½  å­¤ å® å° æ± å¯ å¯ æ
-æ å é£ è¿ ä½  èº« é
-äº å± ç æ­ ä¹ è¦º æ è³
-
-å®³ æ é æ¨£ æ å¾ ç æ
-æ æ è ä½  æ² æ³ ä¸ èµ· è» è® è¥ ç¶ é å§ æ æ¨£ å¯ å æ² å ä¸ æ¼
-
-éª ä½  æ´» é é å¤© ç¡ æ³ å ä¸ é£ æ°
-æ æ³ ä»¤ æ å¿ é¸
-äº äº ç é» é«® ä¼¼ çº äº
-çµ æ è¨¼ å¯¦ æ å¾ ç æ
-
-éª ä½  æ¸¡ é æ¥ å¤© éª ä½  æ¸¡ é ç§ å¤©
-é£ é åº¦ å° å¬ å¤© ä½  æ å° æ å¾ èªª ä¸ åº å è¦
-å¾ é ­ é å§
-å è¥ ç¥ é æ² å è¦ æ¼
-è½ å å³ ä¹ æ¯ æ
+%
+  陪 你 活 過 一 天 陪 你 坐 過 飛 氈
+  陪 你 令 我 輕 鬆 也 令 我 極 度 心 思 紊 亂
+  \once \override LyricText #'self-alignment-X = #1
+  亂 拍 的 拖 我 也 願 試
+  害 怕 這 樣 會 很 留 戀
+  陪 你 渡 過 春 天 陪 你 渡 過 秋 天
+  陪 你 直 到 冬 天 卻 怕 與 你 沒 法 一 起 蛻 變
+  怎 樣 可 免 悲 劇 上 演
+  凌 晨 與 你 細 語 詳 談 說 起 世 間 的 感 情 幼 嫩
+  然 而 我 卻 抬 頭 看 滿 天 星 宿 沉 默 用 心 許 願
+  流 露 傷 感 的 眼 只 怕 對 望
+  害 怕 有 天 我 將 會 飛 得 很 遠
+  難 道 在 你 孤 單 困 惱 寂 寞 時
+  我 再 飛 返 你 身 邊
+  亂 唱 的 歌 也 覺 悅 耳
+  害 怕 這 樣 會 很 留 戀
+  我 怕 與 你 沒 法 一 起 蛻 變
+  若 然 開 始 怎 樣 可 免 悲 劇 上 演
+  陪 你 活 過 這 天 無 法 坐 上 飛 氈
+  情 況 令 我 心 酸
+  亂 了 的 黑 髮 似 為 了
+  結 果 證 實 我 很 留 戀
+  陪 你 渡 過 春 天 陪 你 渡 過 秋 天
+  難 過 度 到 冬 天 你 我 到 最 後 說 不 出 再 見
+  從 頭 開 始 假 若 知 道 悲 劇 要 演
+  能 回 味 也 是 暖
 }
-#(set-global-staff-size 15)
-
-\include "upper.ly"
-\include "lower.ly"
-\include "melody.ly"
 
 \paper {
 %  system-system-spacing = #'((basic-distance . 0.1) (padding . 0))
@@ -344,9 +381,9 @@ lyricsm = \lyricmode {
 }
 
 \header {
-  title = \markup \center-align { "æ¥åå¬ + è¡å¾·æ - å°é£ä¿ " }
-  subtitle = "é¼ç´ä¼´å¥ç"
-  arranger = \markup { "Arrangement by Benson" }
+  title = "楊千嬅 + 蔡德才 - 小飛俠"
+  subtitle = "鋼琴伴奏版"
+  arranger = "Arrangement by Benson"
 }
 
 \score {
