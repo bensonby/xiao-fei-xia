@@ -3,12 +3,21 @@
 #(set-global-staff-size 15)
 
 % TODO
+% add composer
+% add footer for url
+% make code cleaner? - slow syntax parsing for long upper and lower?
 % merge rests from two voices, hide rest for solo at first verse?
 % add lyrics
 % add phrasing slur for voices
 % fingering position, e.g. episode
 % left right hand distribution of first verse, and bar 16? (switch? to try)
 % dynamics
+
+cr = \change Staff = "right"
+cl = \change Staff = "left"
+rhMark = \markup { 
+  \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
+}
 
 upper = \relative c' {
   \clef treble \key e \major \time 4/4 \tempo 4 = 108
@@ -134,26 +143,26 @@ lower = \relative c {
   gis
   <fis cis'>2 \times 2/3 {<fis cis'>4 <gis dis'> <a e'>}
   <a e'>1
-  << {\change Staff = upper \stemDown fis'4. fis8 b4 fis'8 fis,} \\ {\change Staff = lower \stemNeutral b,1}>>
+  << {\cr \stemDown fis'4. fis8 b4 fis'8 fis,} \\ {\cl \stemNeutral b,1}>>
   \stemNeutral b2 fis'
 
-  e,8 b' \change Staff = upper e gis b e, gis b,
-  \change Staff = lower fis cis' \change Staff = upper e a e' e, cis e
-  \change Staff = lower gis, b e \change Staff = upper e'~ e b' e,, b'
-  \change Staff = lower a, cis e \change Staff = upper b'' a gis e b
-  \change Staff = lower e,, b' \change Staff = upper e gis b e, gis b,
-  \change Staff = lower fis \change Staff = upper cis' e a~ a e cis a'
-  \change Staff = lower gis, b e \change Staff = upper <b' b'>~ <b b'> gis' <e, e'> b'
-  \change Staff = lower a, cis e a a,4 gis
+  e,8 b' \cr e gis b e, gis b,
+  \cl fis cis' \cr e a e' e, cis e
+  \cl gis, b e \cr e'~ e b' e,, b'
+  \cl a, cis e \cr b'' a gis e b
+  \cl e,, b' \cr e gis b e, gis b,
+  \cl fis \cr cis' e a~ a e cis a'
+  \cl gis, b e \cr <b' b'>~ <b b'> gis' <e, e'> b'
+  \cl a, cis e a a,4 gis
   fis8 cis' a'4 e,8 cis' fis e
   dis, b'4 dis8 b, fis' << {\clef treble dis'''4( 
-  \clef bass \change Staff = upper b2)} \\ {\change Staff = lower s4 e,,,8 gis b e dis, b'4.} >>
+  \clef bass \cr b2)} \\ {\cl s4 e,,,8 gis b e dis, b'4.} >>
   cis,8 gis' cis gis b, gis' b gis
-  a, e' a \once \override Glissando #'style = #'dashed-line cis \glissando \change Staff = upper e b' a gis
-  \change Staff = lower a,, e' a cis \times 2/3 {<a, a'>4 <b b'> <cis cis'>}
-  cis8 gis' cis \change Staff = upper b'' b, e \change Staff = lower cis, e,
-  b fis' b \change Staff = upper <fis' b>~ <fis b> b, dis'4
-  \change Staff = lower R1
+  a, e' a \once \override Glissando #'style = #'dashed-line cis \glissando \cr e b' a gis
+  \cl a,, e' a cis \times 2/3 {<a, a'>4 <b b'> <cis cis'>}
+  cis8 gis' cis \cr b'' b, e \cl cis, e,
+  b fis' b \cr <fis' b>~ <fis b> b, dis'4
+  \cl R1
 
   e,,,2 e'4. e,8
   fis2 fis'4. fis,8
@@ -161,7 +170,7 @@ lower = \relative c {
   cis8 gis' cis cis, b gis' b4
   a,8 e' a e cis'4 e,,8_5 a_1
   gis8_5 e' b'4 r8 b,, e gis
-  fis8_5 cis' e \once \override Glissando #'style = #'dashed-line a \glissando \change Staff = upper e' cis fis, \change Staff = lower cis
+  fis8_5 cis' e \once \override Glissando #'style = #'dashed-line a \glissando \cr e' cis fis, \cl cis
   << {b1} \\ {\stemUp a'8 b fis dis'~ dis2} >>
   \stemNeutral e,,2 e'4 b,8 e
   fis2 fis'4 gis,8 a
@@ -182,13 +191,13 @@ lower = \relative c {
   <cis cis'>8 gis' e' gis cis gis cis,_1 cis,
   <fis, fis'>2 r2
 
-  b'8 fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \change Staff = upper fis cis dis fis
-  \change Staff = lower \stemDown cis, gis' \change Staff = upper b e \stemNeutral gis b, e gis
-  \change Staff = lower \stemDown dis, b' \change Staff = upper dis e \stemNeutral fis b, dis fis
-  \change Staff = lower e, b'4 e8~ e4 e8 fis,8
-  << {b,8 fis' b \once \override Glissando #'style = #'dashed-line cis \glissando \change Staff = upper dis fis, b cis} \\ {\change Staff = lower b,2. \parenthesize b'8 fis} >>
-  << {\change Staff = upper dis' e b gis' cis, b e gis} \\ {\change Staff = lower cis,,2.~ cis8 cis} >>
-  << {dis8 fis b \once \override Glissando #'style = #'dashed-line cis \glissando \change Staff = upper dis e b4} \\ {\change Staff = lower dis,1} >>
+  b'8 fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \cr fis cis dis fis
+  \cl \stemDown cis, gis' \cr b e \stemNeutral gis b, e gis
+  \cl \stemDown dis, b' \cr dis e \stemNeutral fis b, dis fis
+  \cl e, b'4 e8~ e4 e8 fis,8
+  << {b,8 fis' b \once \override Glissando #'style = #'dashed-line cis \glissando \cr dis fis, b cis} \\ {\cl b,2. \parenthesize b'8 fis} >>
+  << {\cr dis' e b gis' cis, b e gis} \\ {\cl cis,,2.~ cis8 cis} >>
+  << {dis8 fis b \once \override Glissando #'style = #'dashed-line cis \glissando \cr dis e b4} \\ {\cl dis,1} >>
   \stemNeutral e8 b' e gis e, e' dis, dis'
   cis, gis' <cis e>4 b,8 gis' <b dis>4
   ais,8 fis' <ais cis>4 fis,8 cis' <fis ais>4
@@ -232,7 +241,7 @@ lower = \relative c {
   e,, e' g, gis a_5 e' a e
   d,4. d'8 r4 e,8 f
   g2 b'
-  << {f,2. g8 f} \\ {\change Staff = upper r8 c'' f <g c>~ <g c>2} >>
+  << {f,2. g8 f} \\ {\cr r8 c'' f <g c>~ <g c>2} >>
   << {e,,1} \\ {g'8\rest g c g'~ g f e c} >>
   d,,8( c' f4) g,8( f' b) d,
   f2.~ f8 f
@@ -383,37 +392,35 @@ lyricsm = \lyricmode {
 \header {
   title = "楊千嬅 + 蔡德才 - 小飛俠"
   subtitle = "鋼琴伴奏版"
-  arranger = "Arrangement by Benson"
+  arranger = "Arranged by Benson"
+  composer = "Composed by Jason Choi @ People Mountain People Sea"
+  copyright = "https://music.bensonby.me"
+  tagline = "https://music.bensonby.me"
 }
 
+\book {
 \score {
   \new StaffGroup <<
     \new Staff <<
+      \set Staff.instrumentName = #"Voices"
       \set Staff.fontSize = #-2
-\override StaffSymbol #'staff-space = #(magstep -3)
-%\override StaffSymbol #'thickness = #(magstep -3)
+      \override StaffSymbol #'staff-space = #(magstep -3)
       \set Staff.midiInstrument = #"oboe"
-    \new Voice = "Female" { \voiceOne \melodyf }
-%{    \new Staff = "Female" \melodyf <<
-      \set Staff.instrumentName = #"Female  "
-      \set Staff.midiInstrument = #"pan flute"
-      \set Staff.midiMinimumVolume = #0.6
-    >>%}
-    \new Voice = "Male" { \voiceTwo \melodym }
-%{    \new Staff = "Male" \melodym <<
-      \set Staff.instrumentName = #"Male  "
-      \set Staff.midiInstrument = #"oboe"
-      \set Staff.midiMinimumVolume = #0.8
-    >>%}
-      >>
-      \context Lyrics = soprano { s1}
-      \context Lyrics = tenor {s1}
-      \context Lyrics = soprano \lyricsto Female \lyricsf
-      \context Lyrics = tenor \lyricsto Male \lyricsm
+      \new Voice = "Female" { \voiceOne \melodyf }
+      \new Voice = "Male" { \voiceTwo \melodym }
+    >>
+    \context Lyrics = soprano { s1}
+    \context Lyrics = tenor {s1}
+    \context Lyrics = soprano \lyricsto Female \lyricsf
+    \context Lyrics = tenor \lyricsto Male \lyricsm
     \new PianoStaff <<
-      \set PianoStaff.instrumentName = #"Piano  "
-      \new Staff = "upper" \upper
-      \new Staff = "lower" \lower
+      \set PianoStaff.instrumentName = #"Piano"
+      \new Staff = "right" {
+        \keepWithTag #'written \upper
+      }
+      \new Staff = "left" {
+        \keepWithTag #'written \lower
+      }
     >>
   >>
   \layout {
@@ -448,6 +455,30 @@ lyricsm = \lyricmode {
 %      \accepts Dynamics
     }
   }
+}
+\score {
+  \new StaffGroup <<
+    \new Staff <<
+      \set Staff.fontSize = #-2
+      \override StaffSymbol #'staff-space = #(magstep -3)
+      \set Staff.midiInstrument = #"oboe"
+      \new Voice = "Female" { \voiceOne \melodyf }
+      \new Voice = "Male" { \voiceTwo \melodym }
+    >>
+    \context Lyrics = soprano { s1}
+    \context Lyrics = tenor {s1}
+    \context Lyrics = soprano \lyricsto Female \lyricsf
+    \context Lyrics = tenor \lyricsto Male \lyricsm
+    \new PianoStaff <<
+      \set PianoStaff.instrumentName = #"Piano  "
+      \new Staff = "right" {
+        \articulate << \keepWithTag #'midi \upper >>
+      }
+      \new Staff = "left" {
+        \articulate << \keepWithTag #'midi \lower >>
+      }
+    >>
+  >>
   \midi {
 %    \context {
 %      \Staff
@@ -458,4 +489,5 @@ lyricsm = \lyricmode {
 %      \consists "Staff_performer"      
 %    }
   }
+}
 }
