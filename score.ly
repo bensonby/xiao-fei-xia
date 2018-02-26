@@ -3,11 +3,8 @@
 #(set-global-staff-size 15)
 
 % TODO
-% add composer
-% add footer for url
 % make code cleaner? - slow syntax parsing for long upper and lower?
 % merge rests from two voices, hide rest for solo at first verse?
-% add lyrics
 % add phrasing slur for voices
 % fingering position, e.g. episode
 % left right hand distribution of first verse, and bar 16? (switch? to try)
@@ -281,7 +278,6 @@ melodyf = \relative c' {
 }
 
 lyricsf = \lyricmode {
-%\addlyrics {
   \set stanza = #"女:"
   從 前 有 個 男 孩 夜 裡 說 想 約 我 於 森 林 見 面
   原 訂 說 愛 談 情 卻 碰 巧 天 氣 轉 差 颳 風 閃 電
@@ -341,9 +337,7 @@ melodym = \relative c' {
 }
 
 lyricsm = \lyricmode {
-\set stanza = #"男:"
-%\addlyrics {
-%
+  \set stanza = #"男:"
   陪 你 活 過 一 天 陪 你 坐 過 飛 氈
   陪 你 令 我 輕 鬆 也 令 我 極 度 心 思 紊 亂
   \once \override LyricText #'self-alignment-X = #1
@@ -373,20 +367,8 @@ lyricsm = \lyricmode {
 }
 
 \paper {
-%  system-system-spacing = #'((basic-distance . 0.1) (padding . 0))
-%  ragged-last-bottom = ##f
-%  ragged-bottom = ##f
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \fill-line { " " }
-  evenHeaderMarkup = \markup \fill-line { " " }
-  oddFooterMarkup = \markup { \fill-line {
-    \bold \fontsize #3 \on-the-fly #print-page-number-check-first
-    \fromproperty #'page:page-number-string } }
-  evenFooterMarkup = \markup { \fill-line {
-    \bold \fontsize #3 \on-the-fly #print-page-number-check-first
-    \fromproperty # 'page:page-number-string } }
-%#(define page-breaking ly:page-turn-breaking)
-#(define page-breaking ly:minimal-breaking)
+  oddFooterMarkup = \markup { \fill-line { "https://music.bensonby.me" }}
+  evenFooterMarkup = \markup { \fill-line { "https://music.bensonby.me" }}
 }
 
 \header {
@@ -394,14 +376,14 @@ lyricsm = \lyricmode {
   subtitle = "鋼琴伴奏版"
   arranger = "Arranged by Benson"
   composer = "Composed by Jason Choi @ People Mountain People Sea"
-  copyright = "https://music.bensonby.me"
-  tagline = "https://music.bensonby.me"
 }
 
 \book {
 \score {
   \new StaffGroup <<
-    \new Staff <<
+    \new Staff \with {
+      \consists "Merge_rests_engraver"
+    } <<
       \set Staff.instrumentName = #"Voices"
       \set Staff.fontSize = #-2
       \override StaffSymbol #'staff-space = #(magstep -3)
@@ -446,14 +428,10 @@ lyricsm = \lyricmode {
     \context {
       \RemoveEmptyStaffContext
     }
-    \context {
-      \Score
-      \override VerticalAxisGroup #'remove-first = ##t
-    }
-    \context {
-      \PianoStaff
-%      \accepts Dynamics
-    }
+    % \context {
+      % \Score
+      % \override VerticalAxisGroup #'remove-first = ##t
+    % }
   }
 }
 \score {
@@ -480,14 +458,6 @@ lyricsm = \lyricmode {
     >>
   >>
   \midi {
-%    \context {
-%      \Staff
-%      \remove "Staff_performer"
-%    }
-%    \context {
-%      \Voice
-%      \consists "Staff_performer"      
-%    }
   }
 }
 }
