@@ -63,22 +63,30 @@ upper-verse-one = \relative c''' {
 }
 
 upper-chorus-one = \relative c'' {
-  <e gis,>8 dis e dis e dis b4
-  r8 dis e dis e dis b4
-  <gis e'>4 e'8 dis e dis e gis
-  <e gis dis'>2 b'
-  << {r4 <dis,, a' dis>4( <e a e'>2)} \\ {s2 b'8 a e4} >>
-  <gis, e'> <dis' gis dis'>( <e gis e'>8) dis' b fis
-  b1
+  <e gis,>8\( dis e dis e dis b4\)
+  r8 dis\( e dis e dis b4\)
+  <gis e'>4 e'8\( dis e dis e gis
+  <e gis dis'>2 b'\)
+  << {r4 <dis,, a' dis>4( <e a e'>2)} \\ {s2 b'8\( a e4\)} >>
+  <gis, e'> <dis' gis dis'>\( <e gis e'>8 dis' b fis
+  b1\)
   r2 <gis gis'>4( <fis fis'>)
-  r4 <cis' e>8 <b dis> <cis e> <b dis> <gis b>4
-  <cis e>8 <b dis> <cis e> <b dis> <cis e> <b dis> <gis b>4
+  r4 <cis' e>8\( <b dis> <cis e> <b dis> <gis b>4\)
+  <cis e>8\( <b dis> <cis e> <b dis> <cis e> <b dis> <gis b>4\)
   <cis e>8( <b dis> <cis e> <b dis> <cis e> <b dis> <cis^3 e^5> <e^1 gis^2>
   <e gis dis'>2 <dis gis b>4) dis'(
   cis) <gis, cis gis'>( <fis b fis'>2)
-  r4 <fis b fis'>4( <e gis e'>8) dis' b e,
-  << {b'1} \\ {r4 a, e' a} >>
-  <b, dis a' b>2
+  r4 << {
+    \stemNeutral
+    <fis b fis'>4\( <e gis e'>8 dis' b e,
+    \stemUp
+    b'1\)
+  } \\ {
+    s2.
+    r4 a,\( e' a
+    \stemNeutral
+    <b, dis a' b>2\)
+  } >>
 }
 
 upper-episode = \relative c''' {
@@ -197,22 +205,26 @@ lower-verse-one = \relative c {
 }
 
 lower-chorus-one = \relative c, {
-  e2 e'4. e,8
-  fis2 fis'4. fis,8
-  gis2 gis'4 e8 dis
-  cis8 gis' cis cis, b gis' b4
-  a,8 e' a e cis'4 e,,8_5 a_1
-  gis8_5 e' b'4 r8 b,, e gis
-  fis8_5 cis' e \once \override Glissando #'style = #'dashed-line a \glissando \cr e' cis fis, \cl cis
-  << {b1} \\ {\stemUp a'8 b fis dis'~ dis2} >>
-  \stemNeutral e,,2 e'4 b,8 e
-  fis2 fis'4 gis,8 a
-  gis2 gis'8 e dis b
-  cis gis' cis gis b, gis' b4
-  a,8 e' a cis a, dis <fis b> a,
-  gis dis' b' gis, cis gis' e'4
-  fis,,8 e' \parenthesize a e a e cis fis,
-  b2
+  e2\( e'4.\) e,8\(
+  fis2 fis'4.\) fis,8\(
+  gis2\) gis'4\( e8 dis
+  cis8 gis' cis cis, b gis' b4\)
+  a,8\( e' a e cis'4\) e,,8\( a
+  gis8_5 e' b'4\) r8 b,,_\( e gis
+  fis8_5 cis' e \once \override Glissando #'style = #'dashed-line a \glissando \cr e' cis fis, \cl cis\)
+  << {b1} \\ {
+    \stemUp
+    \set fingeringOrientations = #'(left)
+    <a'\finger \rhMark>8^\( b fis dis'~\) dis2
+  } >>
+  \stemNeutral e,,2\( e'4\) b,8\( e
+  fis2 fis'4\) gis,8\( a
+  gis2\) gis'8\( e dis b
+  cis gis' cis gis b, gis' b4\)
+  a,8\( e' a cis\) a,\( dis <fis b>\) a,\(
+  gis dis' b' gis, cis gis' e'4\)
+  fis,,8\( e' \parenthesize a e a e cis fis,
+  b2\)
 }
  
 lower-episode = \relative c {
