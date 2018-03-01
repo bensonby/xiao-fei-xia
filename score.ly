@@ -92,13 +92,21 @@ upper-chorus-one = \relative c'' {
 upper-episode = \relative c''' {
   b8( cis dis e \key b \major
   <gis, b fis'>4 <b, dis b'>8 <ais ais'> <b dis b'>4.) <gis' gis'>8(
-  <fis dis' fis>4 <b,^1 b'^5>8 <ais^1 ais'^4> <b^1 b'^5> <cis^1 cis'^3> <dis^1 dis'^4> <e^1 e'^5>
+  <fis dis' fis>4 <b, b'^5>8 <ais ais'^4> <b b'^5> <cis cis'^3> <dis dis'^4> <e e'^5>
   <dis gis b dis>4. <b b'>8 <b b'>4 <cis cis'>
-  <fis, ais dis fis>2) <b b'>8( <cis^1 cis'^3> <dis^1 dis'^4> <e^1 e'^5>
-  <fis b dis fis>4 <b, b'>8 <ais ais'> <b dis b'>4.) <gis' gis'>8(
-  <fis dis' fis>4 <b, b'>8 <ais ais'> <b b'> <cis cis'> <dis dis'> <e e'>
-  <e gis e'>4.) <dis gis dis'>8 <dis gis dis'>4 <b dis b'>
-  << {<fis cis' fis>1} \\ {gis2 ais} >>
+  <fis, ais dis fis>2) <b b'>8( <cis cis'^3> <dis dis'^4> <e e'^5>
+  <fis b dis fis>4 <b, b'>8 <ais ais'> <b dis b'>4.)
+  << {
+    \stemNeutral
+    <gis' gis'>8\(
+    <fis dis' fis>4 <b, b'>8 <ais ais'> <b b'> <cis cis'> <dis dis'> <e e'>
+    <e gis e'>4. <dis gis dis'>8 <dis gis dis'>4 <b dis b'>
+    \stemUp
+    <fis cis' fis>1\)
+  } \\ {
+    s8 s1*2
+    gis2\( ais\)
+  } >>
 }
 
 upper-verse-two = \relative c' {
@@ -229,14 +237,14 @@ lower-chorus-one = \relative c, {
  
 lower-episode = \relative c {
   r4 <b b'> \key b \major
-  e,4. e'8 <gis b>4 e8 e,
-  <dis dis'>4. b'8 <dis fis>4 b8 fis
-  cis8 cis' <gis' gis'>4 <ais ais'> <gis gis'>
-  <b,, b'>8 fis'' ais cis b, cis dis e
-  <e, e'>4. e'8 <gis b>4 <e, e'>4
-  <dis dis'>4. b'8 <fis' b>8 b, fis_3 dis_4
-  <cis cis'>8 gis' e' gis cis gis cis,_1 cis,
-  <fis, fis'>2 r2
+  e,4. e'8( <gis b>4) e8\( e,
+  <dis dis'>4.\) b'8( <dis fis>4) b8 fis
+  cis8 cis' <gis' gis'>4-- <ais ais'>-- <gis gis'>--
+  <b,, b'>8 fis''( ais cis) b,\( cis dis e\)
+  <e, e'>4. e'8( <gis b>4) <e, e'>4
+  <dis dis'>4. b'8\( <fis' b>8 b, fis_3 dis_4\)
+  <cis cis'>8\( gis' e' gis cis gis cis,_1 cis,
+  <fis, fis'>2\) r2
 }
 
 lower-verse-two = \relative c {
