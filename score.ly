@@ -45,15 +45,20 @@ upper-verse-one = \relative c''' {
   s1
   s1
   s1
-  r2 r4 gis4
-  <a, a'>2 r4 fis'4
-  r4 b,8 fis' e dis b a
-  \stemDown gis2 \stemNeutral <dis b'>4 <fis fis'>
+  r2 r4 gis4\(
+  <a, a'>2\) r4 fis'4
+  r4 << {
+    s4 s4 dis'4\( b2\)
+  } \\ {
+    b,8\( fis' e dis b a gis2\)
+  } >>
+  <dis b'>4\( <fis fis'>
   <gis e'>4. e'8 <b dis> b gis b
-  e,1
-  e2 \times 2/3 {e4 fis gis}
-  gis2. a'4
-  fis1
+  e,1\)
+  e2 \times 2/3 {e4\( fis gis}
+  gis2. \stemUp a'4
+  \stemNeutral
+  fis1\)
   b2 r2
 }
 
@@ -168,22 +173,26 @@ lower-intro = \relative c' {
 }
 
 lower-verse-one = \relative c {
-  e8 b' \cr e gis b e, gis b,
-  \cl fis cis' \cr e a e' e, cis e
-  \cl gis, b e \cr e'~ e b' e,, b'
-  \cl a, cis e \cr b'' a gis e b
-  \cl e,, b' \cr e gis b e, gis b,
-  \cl fis \cr cis' e a~ a e cis a'
-  \cl gis, b e \cr <b' b'>~ <b b'> gis' <e, e'> b'
-  \cl a, cis e a a,4 gis
-  fis8 cis' a'4 e,8 cis' fis e
-  dis, b'4 dis8 b, fis' << {\clef treble dis'''4( 
-  \clef bass \cr b2)} \\ {\cl s4 e,,,8 gis b e dis, b'4.} >>
+  e8_\( b' \cr e gis b e, gis b,\)
+  \cl fis\( cis' \cr e a e' e,
+  \set fingeringOrientations = #'(left)
+  <cis\finger \lhMark> e\)
+  \cl gis,\( b e \cr e'~ e b' \cl e,, \cr b'\)
+  \cl a,\( cis e \cr b'' a gis e b\)
+  \cl e,,_\( b' \cr e gis b e, gis b,\)
+  \cl fis\( cis' \cr e a~ a e cis a'\)
+  \cl gis,\( b e \cr <b' b'>~ <b b'> gis' <e,\finger \lhMark e'> b'\)
+  \cl a,\( cis e a\) a,4 gis
+  fis8\( cis' a'4\) e,8\( cis' fis e\)
+  dis,\( b'4 dis8\) b, \once \override Glissando #'style = #'dashed-line fis'\glissando
+  \hideNotes \cr b'4
+  \unHideNotes \cl
+  e,,8\( gis b e\) dis,\( b'4.\)
   cis,8 gis' cis gis b, gis' b gis
-  a, e' a \once \override Glissando #'style = #'dashed-line cis \glissando \cr e b' a gis
-  \cl a,, e' a cis \times 2/3 {<a, a'>4 <b b'> <cis cis'>}
-  cis8 gis' cis \cr b'' b, e \cl cis, e,
-  b fis' b \cr <fis' b>~ <fis b> b, dis'4
+  a,_\( e' a \once \override Glissando #'style = #'dashed-line cis \glissando \cr e b' a gis\)
+  \cl a,,\( e' a cis\) \times 2/3 {<a, a'>4 <b b'> <cis cis'>}
+  cis8_\( gis' cis \cr b'' b,[ \once \override Glissando #'style = #'dashed-line e]\glissando \cl cis, e,\)
+  b_\( fis' b \cr <fis' b>~ <fis b> b, dis'4\)
   \cl R1
 }
 
