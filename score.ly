@@ -16,16 +16,16 @@ rhMark = \markup {
   \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
 }
 
-upper = \relative c' {
-  \clef treble \key e \major \time 4/4 \tempo 4 = 108
-  
+upper-intro = \relative c' {
   <a' e' b'>8\arpeggio a' gis e~ e2
   <b e b'>8\arpeggio a' gis e~ e b a gis
   a4 e' \times 2/3 {e fis gis}
   <cis, gis'>2. a'4
   fis1
   << {b4. b8} \\ {dis,8 b dis4} >> <fis a>8 gis fis e
+}
 
+upper-verse-one = \relative c'' {
   <e gis>1
   s1
   s1
@@ -43,8 +43,10 @@ upper = \relative c' {
   gis2. a'4
   fis1
   b2 r2
+}
 
-  <gis, e'>8 dis' e dis e dis b4
+upper-chorus-one = \relative c'' {
+  <e gis,>8 dis e dis e dis b4
   r8 dis e dis e dis b4
   <gis e'>4 e'8 dis e dis e gis
   <e gis dis'>2 b'
@@ -60,8 +62,10 @@ upper = \relative c' {
   r4 <fis b fis'>4( <e gis e'>8) dis' b e,
   << {b'1} \\ {r4 a, e' a} >>
   <b, dis a' b>2
+}
 
-  b''8( cis dis e \key b \major
+upper-episode = \relative c''' {
+  b8( cis dis e \key b \major
   <gis, b fis'>4 <b, dis b'>8 <ais ais'> <b dis b'>4.) <gis' gis'>8(
   <fis dis' fis>4 <b,^1 b'^5>8 <ais^1 ais'^4> <b^1 b'^5> <cis^1 cis'^3> <dis^1 dis'^4> <e^1 e'^5>
   <dis gis b dis>4. <b b'>8 <b b'>4 <cis cis'>
@@ -70,8 +74,10 @@ upper = \relative c' {
   <fis dis' fis>4 <b, b'>8 <ais ais'> <b b'> <cis cis'> <dis dis'> <e e'>
   <e gis e'>4.) <dis gis dis'>8 <dis gis dis'>4 <b dis b'>
   << {<fis cis' fis>1} \\ {gis2 ais} >>
+}
 
-  <b, dis>1
+upper-verse-two = \relative c' {
+  <b dis>1
   <cis e>
   <dis fis>
   r4 << {<fis fis'>( <gis gis'>4. <ais ais'>8} \\ {s4 e'8 dis b4} >>
@@ -88,8 +94,10 @@ upper = \relative c' {
   <gis b dis gis>2. <ais ais'>4
   <fis gis cis fis>2) <fis cis'>8 b fis cis
   <fis cis'>2 r2
+}
 
-  <dis b'>8 ais' b ais b ais <dis, fis>4
+upper-chorus-two = \relative c'' {
+  <b dis,>8 ais b ais b ais <dis, fis>4
   r8 <cis ais'> <dis b'> <e ais> <fis b> ais fis4
   <dis b'>4( b'8 ais b ais b dis
   <b dis ais'>2 <ais dis fis>4) <ais dis>
@@ -104,7 +112,10 @@ upper = \relative c' {
   <b e gis>4 <dis, gis dis'>4( <cis fis ais cis>4.) ais''8
   fis4 <cis, fis cis'>4( <b dis b'>4) <b dis>
   <gis cis e>8 fis' dis e b' e,4.
-  r8 <g, c f g>4.-> <f' g c f>4-> <g c f g>-> \key c \major
+}
+
+upper-chorus-three = \relative c' {
+  r8 <g c f g>4.-> <f' g c f>4-> <g c f g>-> \key c \major
 
   << {<g e' g>1~} \\ {r2 <g, d' e>2} >>
   << {<g' e' g>2 <f c' f>8 e' c g} \\ {<a, c>2} >>
@@ -122,8 +133,10 @@ upper = \relative c' {
   <d, g b>4 <d' f b d>4( \times 2/3 {<c e g c>4)( <g f' g> <e e'>}
   <c f c'>2) d''2
   g,2 r
+}
 
-  s2 \stemUp g'2
+upper-ending = \relative c'''' {
+  s2 \stemUp g2
   \stemNeutral c, r4 e
   \grace{d16[ cis]} c1
   r8 c,, f <c' g'>8~-> <c g'>4 <g e'>
@@ -133,17 +146,17 @@ upper = \relative c' {
   g1 \bar "|."
 }
 
-lower = \relative c {
-  \clef bass \key e \major \time 4/4
-
-  a'1
+lower-intro = \relative c' {
+  a1
   gis
   <fis cis'>2 \times 2/3 {<fis cis'>4 <gis dis'> <a e'>}
   <a e'>1
   << {\cr \stemDown fis'4. fis8 b4 fis'8 fis,} \\ {\cl \stemNeutral b,1}>>
   \stemNeutral b2 fis'
+}
 
-  e,8 b' \cr e gis b e, gis b,
+lower-verse-one = \relative c {
+  e8 b' \cr e gis b e, gis b,
   \cl fis cis' \cr e a e' e, cis e
   \cl gis, b e \cr e'~ e b' e,, b'
   \cl a, cis e \cr b'' a gis e b
@@ -160,8 +173,10 @@ lower = \relative c {
   cis8 gis' cis \cr b'' b, e \cl cis, e,
   b fis' b \cr <fis' b>~ <fis b> b, dis'4
   \cl R1
+}
 
-  e,,,2 e'4. e,8
+lower-chorus-one = \relative c, {
+  e2 e'4. e,8
   fis2 fis'4. fis,8
   gis2 gis'4 e8 dis
   cis8 gis' cis cis, b gis' b4
@@ -177,7 +192,9 @@ lower = \relative c {
   gis dis' b' gis, cis gis' e'4
   fis,,8 e' \parenthesize a e a e cis fis,
   b2
-  
+}
+ 
+lower-episode = \relative c {
   r4 <b b'> \key b \major
   e,4. e'8 <gis b>4 e8 e,
   <dis dis'>4. b'8 <dis fis>4 b8 fis
@@ -187,8 +204,10 @@ lower = \relative c {
   <dis dis'>4. b'8 <fis' b>8 b, fis_3 dis_4
   <cis cis'>8 gis' e' gis cis gis cis,_1 cis,
   <fis, fis'>2 r2
+}
 
-  b'8 fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \cr fis cis dis fis
+lower-verse-two = \relative c {
+  b8 fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \cr fis cis dis fis
   \cl \stemDown cis, gis' \cr b e \stemNeutral gis b, e gis
   \cl \stemDown dis, b' \cr dis e \stemNeutral fis b, dis fis
   \cl e, b'4 e8~ e4 e8 fis,8
@@ -205,8 +224,10 @@ lower = \relative c {
   gis8 dis' fis gis <b dis>4 gis8 gis,
   fis cis' fis ais~ ais4. fis,8
   fis,2 fis'4-> r4
+}
 
-  b,4. fis'8 b4. b,8
+lower-chorus-two = \relative c, {
+  b4. fis'8 b4. b,8
   cis2 cis'4. cis,8
   dis4. b'8 dis8 cis b fis
   gis4 dis8 gis fis4. dis8
@@ -221,6 +242,9 @@ lower = \relative c {
   e, b' e gis e, cis' fis ais
   dis,, cis' fis dis, gis dis' gis gis,
   cis,4. gis'8 cis gis cis cis,_3
+}
+
+lower-chorus-three = \relative c, {
   g8 <g g'>4-> g8 <g g'> <g g'> <g g'> <g g'>  \key c \major
   c8 g' c d e d c g
   d c' f a c a f c
@@ -238,7 +262,10 @@ lower = \relative c {
   e,, e' g, gis a_5 e' a e
   d,4. d'8 r4 e,8 f
   g2 b'
-  << {f,2. g8 f} \\ {\cr r8 c'' f <g c>~ <g c>2} >>
+}
+
+lower-ending = \relative c, {
+  << {f2. g8 f} \\ {\cr r8 c'' f <g c>~ <g c>2} >>
   << {e,,1} \\ {g'8\rest g c g'~ g f e c} >>
   d,,8( c' f4) g,8( f' b) d,
   f2.~ f8 f
@@ -246,6 +273,30 @@ lower = \relative c {
   d1
   g,~
   g \bar "|."
+}
+
+upper = \relative c {
+  \clef treble \key e \major \time 4/4 \tempo 4 = 108
+  \upper-intro
+  \upper-verse-one
+  \upper-chorus-one
+  \upper-episode
+  \upper-verse-two
+  \upper-chorus-two
+  \upper-chorus-three
+  \upper-ending
+}
+
+lower = \relative c {
+  \clef bass \key e \major \time 4/4
+  \lower-intro
+  \lower-verse-one
+  \lower-chorus-one
+  \lower-episode
+  \lower-verse-two
+  \lower-chorus-two
+  \lower-chorus-three
+  \lower-ending
 }
 
 melodyf = \relative c' {
