@@ -15,18 +15,30 @@ cl = \change Staff = "left"
 rhMark = \markup { 
   \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
 }
-
-upper-intro = \relative c' {
-  <a' e' b'>8\arpeggio a' gis e~ e2
-  <b e b'>8\arpeggio a' gis e~ e b a gis
-  a4 e' \times 2/3 {e fis gis}
-  <cis, gis'>2. a'4
-  fis1
-  << {b4. b8} \\ {dis,8 b dis4} >> <fis a>8 gis fis e
+lhMark = \markup { 
+  \path #0.1 #'((moveto 0 1)(rlineto -0.5 0)(rlineto 0 -1.5))
 }
 
-upper-verse-one = \relative c'' {
-  <e gis>1
+upper-intro = \relative c'' {
+  <a e' b'>8\arpeggio\( a' gis e~\) e2
+  << {
+    \stemNeutral
+    <b e b'>8\arpeggio\( a' gis e~ e b a gis
+    a4 e' \times 2/3 {e fis gis}
+    <cis, gis'>2. a'4
+    fis1\)
+  } \\ {
+    s1*3
+    fis,4. fis8^\( b4 fis'8
+    \set fingeringOrientations = #'(left)
+    <fis,\finger \lhMark>
+    \stemNeutral
+    <b' dis,>8 b, dis b' <a fis> gis fis e
+    <e gis>1\)
+  } >>
+}
+
+upper-verse-one = \relative c''' {
   s1
   s1
   s1
@@ -151,8 +163,8 @@ lower-intro = \relative c' {
   gis
   <fis cis'>2 \times 2/3 {<fis cis'>4 <gis dis'> <a e'>}
   <a e'>1
-  << {\cr \stemDown fis'4. fis8 b4 fis'8 fis,} \\ {\cl \stemNeutral b,1}>>
-  \stemNeutral b2 fis'
+  b1
+  b2 fis'
 }
 
 lower-verse-one = \relative c {
