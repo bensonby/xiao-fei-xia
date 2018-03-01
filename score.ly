@@ -141,21 +141,30 @@ upper-verse-two = \relative c' {
 }
 
 upper-chorus-two = \relative c'' {
-  <b dis,>8 ais b ais b ais <dis, fis>4
-  r8 <cis ais'> <dis b'> <e ais> <fis b> ais fis4
+  <b dis,>8\( ais b ais b ais <dis, fis>4\)
+  r8 <cis ais'>\( <dis b'> <e ais> <fis b> ais fis4\)
   <dis b'>4( b'8 ais b ais b dis
   <b dis ais'>2 <ais dis fis>4) <ais dis>
-  << {<e gis b>1} \\ {r8 dis''( e fis b,) b, fis e} >>
-  <b dis>4 << {<ais dis ais'>( <b dis b'>2)} \\ {s4 r8 dis''4 e8} >>
-  cis8 ais cis b cis4 fis,
-  <cis fis b cis>8 <cis, fis ais>4.-> <dis gis dis'>4-> <cis gis' cis>->
-  fis''4 <gis,, b>8 <fis ais> <gis b> <fis ais> <dis fis>4
-  fis''8 <fis,, ais>8 <gis b> <fis ais> <gis b> <fis ais> <dis fis>4
-  fis''4 <gis,, b>8 <fis ais> <gis b> <fis ais> <gis b> <b dis>
-  << {ais'4 b8^5 cis^4 dis4^5 b} \\ {<b, dis>2 <cis fis>2} >>
-  <b e gis>4 <dis, gis dis'>4( <cis fis ais cis>4.) ais''8
-  fis4 <cis, fis cis'>4( <b dis b'>4) <b dis>
-  <gis cis e>8 fis' dis e b' e,4.
+  << {<e gis b>1 s4} \\ {r8 dis''( e fis b,) b,( fis e \stemNeutral <b dis>4) } >>
+  << {
+    s4 r8 dis''4\( e8
+    \stemNeutral
+    cis8 ais cis b cis4 fis,
+    <cis fis b cis>8\)
+  } \\ {
+    \stemNeutral
+    <ais, dis ais'>4(
+    \stemDown
+    <b dis b'>2)
+  } >>
+  <cis fis ais>4.-> <dis gis dis'>4-> <cis gis' cis>->
+  fis''4 <gis,, b>8\( <fis ais> <gis b> <fis ais> <dis fis>4\)
+  fis''8 <fis,, ais>8\([ <gis b> <fis ais>] <gis b> <fis ais> <dis fis>4\)
+  fis''4 <gis,, b>8\( <fis ais> <gis b> <fis ais> <gis b> <b dis>\)
+  << {ais'4\( b8^5 cis^4 dis4^5 b\)} \\ {<b, dis>2 <cis fis>2} >>
+  <b e gis>4 <dis, gis dis'>4( <cis fis ais cis>4.) ais''8(
+  fis4) <cis, fis cis'>4( <b dis b'>4) <b dis>
+  <gis cis e>8\( fis' dis e b' e,4.\)
 }
 
 upper-chorus-three = \relative c' {
@@ -291,21 +300,21 @@ lower-verse-two = \relative c {
 }
 
 lower-chorus-two = \relative c, {
-  b4. fis'8 b4. b,8
-  cis2 cis'4. cis,8
+  b4.\( fis'8 b4.\) b,8\(
+  cis2 cis'4.\) cis,8\(
   dis4. b'8 dis8 cis b fis
-  gis4 dis8 gis fis4. dis8
-  <e e'>4 \clef treble  <ais' e' gis ais>( <b e gis b>) \clef bass e,8 e,
-  dis b'4 dis8~ dis8 b fis b,
-  <cis cis'>4. e'8 cis'4 b,8 gis
+  gis4 dis8 gis fis4.\) dis8(
+  <e e'>4) \clef treble  <ais' e' gis ais>( <b e gis b>) \clef bass e,8 e,
+  dis_\( b'4 dis8~ dis8 b fis b,\)
+  <cis cis'>4._\( e'8 cis'4 b,8 gis\)
   fis <fis fis'>4-> fis8 <fis fis'>4-> <cis cis'>->
-  <b b'>4. b'8 b'4 b,8 b,
-  <cis cis'>4. cis'8 cis'4 cis,8 cis,
-  <dis dis'>4. b'8 dis4 dis,8 fis
-  gis dis' gis gis, fis8 dis'4 gis8
-  e, b' e gis e, cis' fis ais
-  dis,, cis' fis dis, gis dis' gis gis,
-  cis,4. gis'8 cis gis cis cis,_3
+  <b b'>4._\( b'8 b'4 b,8 b,\)
+  <cis cis'>4._\( cis'8 cis'4 cis,8 cis,\)
+  <dis dis'>4._\( b'8 dis4\) dis,8 fis
+  gis_\( dis' gis gis, fis8 dis'4 gis8\)
+  e,_\( b' e gis\) e,\( cis' fis ais\)
+  dis,,_\( cis' fis dis, gis dis' gis gis,\)
+  cis,4._\( gis'8 cis gis cis cis,_3\)
 }
 
 lower-chorus-three = \relative c, {
