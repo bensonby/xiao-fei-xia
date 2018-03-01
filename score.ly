@@ -113,20 +113,31 @@ upper-verse-two = \relative c' {
   <b dis>1
   <cis e>
   <dis fis>
-  r4 << {<fis fis'>( <gis gis'>4. <ais ais'>8} \\ {s4 e'8 dis b4} >>
-  << {<b dis b'>1)} \\ {} >>
+  r4 << {
+    <fis fis'>\( <gis gis'>4. <ais ais'>8
+    <b dis b'>1\)
+  } \\ {
+    s4 e8 dis b4
+  } >>
   s1
   <fis, b fis'>1
-  r2 << {cis'''4( dis} \\ {s2} >>
-  << {<gis, e'>4)} \\ {e8 dis e dis e fis gis b} >>
-  <cis, fis dis'>4. <cis fis cis'>8~ <cis fis cis'>4 ais'
-  << {s4} \\ {\appoggiatura {a16[ gis g]} fis4} >> fis, <cis fis ais>4 <cis' fis cis'>
-  <b dis b'>1
+  r2 << {
+    \stemNeutral
+    cis'''4\( dis 
+    \stemUp
+    <e gis,>4\) s2. s2.
+  } \\ {
+    s2
+    e,8\( dis e dis e fis gis b
+    <cis, fis dis'>4. <cis fis cis'>8~ <cis fis cis'>4\)
+  } >>
+  ais'4\( \acciaccatura {a16 gis g} fis4 fis, <cis fis ais>4 <cis' fis cis'>
+  <b dis b'>1\)
   r4 <b, e gis>( \times 2/3 {<b e ais>4 b' cis}
   <cis, e cis'>4 <b e b'>) \times 2/3 {<e gis b e>4->( <fis ais cis fis>-> <gis b dis gis>->}
   <gis b dis gis>2. <ais ais'>4
-  <fis gis cis fis>2) <fis cis'>8 b fis cis
-  <fis cis'>2 r2
+  <fis gis cis fis>2) <fis cis'>8\( b fis cis
+  <fis cis'>2\) r2
 }
 
 upper-chorus-two = \relative c'' {
@@ -248,22 +259,34 @@ lower-episode = \relative c {
 }
 
 lower-verse-two = \relative c {
-  b8 fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \cr fis cis dis fis
-  \cl \stemDown cis, gis' \cr b e \stemNeutral gis b, e gis
-  \cl \stemDown dis, b' \cr dis e \stemNeutral fis b, dis fis
+  b8_\( fis' b \once \override Glissando #'style = #'dashed-line dis \glissando \cr fis cis dis fis\)
+  \cl \stemDown cis,_\( gis' \cr b e \stemNeutral gis b, e gis\)
+  \cl \stemDown dis,_\( b' \cr dis e \stemNeutral fis b, dis fis\)
   \cl e, b'4 e8~ e4 e8 fis,8
-  << {b,8 fis' b \once \override Glissando #'style = #'dashed-line cis \glissando \cr dis fis, b cis} \\ {\cl b,2. \parenthesize b'8 fis} >>
-  << {\cr dis' e b gis' cis, b e gis} \\ {\cl cis,,2.~ cis8 cis} >>
-  << {dis8 fis b \once \override Glissando #'style = #'dashed-line cis \glissando \cr dis e b4} \\ {\cl dis,1} >>
-  \stemNeutral e8 b' e gis e, e' dis, dis'
-  cis, gis' <cis e>4 b,8 gis' <b dis>4
-  ais,8 fis' <ais cis>4 fis,8 cis' <fis ais>4
-  b,8 fis' <b dis>4 ais,8 fis' <ais cis>4
-  gis,8 dis' <gis b>4 fis,8 dis' <gis b>4
-  e,8 b'4 b8 e4 b8 e,
-  e b' e gis \times 2/3 {<e, e'>4 <fis fis'> <gis gis'>}
-  gis8 dis' fis gis <b dis>4 gis8 gis,
-  fis cis' fis ais~ ais4. fis,8
+  << {
+    b,8 fis' b
+    \once \override Glissando #'style = #'dashed-line cis\glissando \cr
+    dis fis, b cis
+    dis e b gis' cis, b e gis
+    \cl
+    dis,8 fis b
+    \once \override Glissando #'style = #'dashed-line cis \glissando \cr
+    dis e b4
+  } \\ {
+    \cl
+    b,2.\( \parenthesize b'8 fis
+    cis2.~ cis8 cis
+    dis1\)
+  } >>
+  \stemNeutral e8\( b' e gis\) e, e' dis, dis'
+  cis,_\( gis' <cis e>4\) b,8\( gis' <b dis>4\)
+  ais,8\( fis' <ais cis>4\) fis,8\( cis' <fis ais>4\)
+  b,8\( fis' <b dis>4\) ais,8\( fis' <ais cis>4\)
+  gis,8\( dis' <gis b>4\) fis,8\( dis' <gis b>4\)
+  e,8\( b'4 b8 e4 b8 e,\)
+  e\( b' e gis\) \times 2/3 {<e, e'>4-> <fis fis'>-> <gis gis'>->}
+  gis8_\( dis' fis gis <b dis>4 gis8 gis,\)
+  fis\( cis' fis ais~\) ais4. fis,8
   fis,2 fis'4-> r4
 }
 
