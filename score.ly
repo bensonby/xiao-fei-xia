@@ -63,7 +63,11 @@ upper-chorus-one = \relative c'' {
   r8 dis\( e dis e dis b4\)
   <gis e'>4 e'8\( dis e dis e gis
   <e gis dis'>2 b'\)
-  << {r4 <dis,, a' dis>4( <e a e'>2)} \\ {s2 b'8\( a e4\)} >>
+  r4 << {
+    <dis,, a' dis>4( <e a e'>2)
+  } \\ {
+    s4 b'8\( a e4\)
+  } >>
   <gis, e'> <dis' gis dis'>\( <e gis e'>8 dis' b fis
   b1\)
   r2 <gis gis'>4( <fis fis'>)
