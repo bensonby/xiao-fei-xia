@@ -3,12 +3,8 @@
 #(set-global-staff-size 15)
 
 % TODO
-% make code cleaner? - slow syntax parsing for long upper and lower?
 % merge rests from two voices, hide rest for solo at first verse?
 % add phrasing slur for voices
-% fingering position, e.g. episode
-% left right hand distribution of first verse, and bar 16? (switch? to try)
-% dynamics
 
 cr = \change Staff = "right"
 cl = \change Staff = "left"
@@ -430,29 +426,40 @@ melodyf = \relative c' {
   \clef treble \key e \major \time 4/4
   \override Script #'padding = #2
 
-  R1 R1 R1 R1 R1 R1
+  R1*6
 
-    r2 r8 gis b e e a, a gis a e' fis e fis gis gis b,~ b4. dis8 cis2 r2
-    r2 r8 gis b e e a, a e' e fis fis e fis gis gis b~ b4 gis cis,2 fis4 gis
-    a8 gis a gis a4 e8 e~ e dis4. r8 dis e fis b ais b ais b4 fis8 fis~ fis e4 b8 e fis gis a
-    gis4 e e b8 b~ b a4. \times 2/3 {e'4 fis gis} gis2. a4 fis2 r2 R1
+  r2 r8 gis\( b e e a, a gis a e' fis e fis gis gis b,~ b4.\) dis8\( cis2\) r2
+  r2 r8 gis\( b e e a, a e' e fis fis e fis gis gis b~ b4\) gis\( cis,2\)
+  fis4\( gis a8 gis a gis a4 e8 e~ e dis4.\)
+  r8 dis\( e fis b ais b ais b4 fis8 fis~ fis e4\)
+  b8\( e fis gis a gis4 e e b8 b~ b a4.\)
+  \times 2/3 {e'4\( fis gis} gis2. a4 fis2\) r2 R1
 
-    R1 R1 R1 r2 r8 gis a b b e, e dis e r r4 r2 r8 gis4 a8 fis dis4 e8 fis4 b, fis'4. r8 r2
-    R1 R1 r8 b, b e e dis e fis fis4. e8 e4 dis cis gis' fis4. fis8 dis4 fis e8 b gis a~
-    a b4. r2 R1 \key b \major R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1
-    r2 e4 fis gis8 fis gis fis gis4 e8 dis~ dis cis4. r8 dis e fis ais a ais a ais4 fis8 e~ e dis4 r8 r2
-    R1 r2 \times 2/3 {e4 fis gis} gis2~ gis8 gis4 b8 gis( fis4.~) fis2
-    r4 r8 fis, b ais b fis' fis4. fis,8 b ais b fis'~ fis fis4 fis,8 b ais b fis'
-    fis4 b,8 ais b ais' ais b fis4. e8 dis4 r
-    r2 r8 r16 dis16 e8 fis fis b, b ais b ais'4 b8 fis dis4 e8 fis4 b,
-    fis'4. fis,8 b ais b fis' fis4. fis,8 b ais b fis'~ fis fis4 fis,8 b ais b fis'
-    fis b, b b' b ais b ais ais4. gis8 gis2
-    r2 r4 r8 ais fis4 ais gis8 fis dis e~ e fis4. r2
-    r4 r8 g, c b c g' \key c \major g4. g,8 c b c g'~ g g4 g,8 c b c g'
-    g4 c,8 b c b' b c g4. f8 e4 r4 r2 r8 r16 e f8 g g c, c b d c b' c
-    g e4 f8 g4 c, g'4. g,8 c b c g' g4. g,8 c b c g'~ g g4 g,8 c b c g'
-    g c, c c' c b c b b4. a8 a4 r4 r2 r4 r8 b g4 b a8 g e f~ f g4.~ g2
-    r4 f8 e f e4. c8 c4.~ c2 R1 r4 g'8 g a c4.~ c8 b c2. R1 R1 R1 R1 \bar "|."
+  R1 R1 R1 r2 r8
+  gis\( a b b e, e dis e\) r r4 r2 r8
+  gis4\( a8 fis dis4 e8 fis4 b, fis'4.\) r8 r2
+  R1 R1 r8 b,\( b e e dis e fis fis4. e8 e4\) dis\( cis gis' fis4.\)
+  fis8\( dis4 fis e8 b gis a~ a b4.\) r2 R1
+  \key b \major R1*15
+  r2 e4\( fis gis8 fis gis fis gis4 e8 dis~ dis cis4.\)
+  r8 dis\( e fis ais gisis ais gisis ais4 fis8 e~ e dis4\) r8 r2
+  R1 r2 \times 2/3 {e4\( fis gis} gis2~ gis8 gis4 b8 gis( fis4.~) fis2\)
+  r4 r8 fis,\( b ais b fis' fis4.\) fis,8\( b ais b fis'~ fis fis4\)
+  fis,8\( b ais b fis' fis4\) b,8\( ais b ais' ais b fis4. e8 dis4\) r
+  r2 r8 r16 dis16\( e8 fis fis b, b ais b\) ais'4\( b8 fis dis4 e8 fis4 b, fis'4.\)
+  fis,8\( b ais b fis' fis4.\) fis,8\( b ais b fis'~ fis fis4\)
+  fis,8\( b ais b fis' fis\) b,\( b b' b ais b ais ais4. gis8 gis2\)
+  r2 r4 r8 ais\( fis4 ais gis8 fis dis e~ e fis4.\) r2
+  r4 r8 g,\( c b c g'
+  \key c \major g4.\) g,8\( c b c g'~ g g4\)
+  g,8\( c b c g' g4\) c,8\( b c b' b c g4. f8 e4\) r4 r2 r8 r16
+  e16\( f8 g g c, c b d c\)
+  b'\( c g e4 f8 g4 c, g'4.\)
+  g,8\( c b c g' g4.\) g,8\( c b c g'~ g g4\)
+  g,8\( c b c g' g c, c c' c b c b b4. a8 a4\)
+  r4 r2 r4 r8 b\( g4 b a8 g e f~ f g4.~ g2\)
+  r4 f8\( e f e4. c8 c4.~ c2\) R1 r4
+  g'8\( g a c4.~ c8 b c2.\) R1 R1 R1 R1 \bar "|."
 }
 
 lyricsf = \lyricmode {
@@ -494,24 +501,33 @@ melodym = \relative c' {
     R1 R1 R1 R1 R1 R1
     R1 R1 R1 R1 R1 R1 R1 R1
     R1 R1 R1 R1 R1 R1 R1 R1
-    r4 r8 b, e dis e b' b4. b,8 e dis e b' b4.
-    b,8 e dis e b' b4 e,8 dis e dis' dis e b4. a8 gis4 r4
-    r2 r8 r16 gis a8 b b e, e dis e dis'4 e8 b gis4 a8 b4 e, b'4.
-    b,8 e dis e b' b4. b,8 e dis e b'~ b b4 b,8 e dis e b' b
-    e, e e' e dis e dis dis4. cis8 cis4 r4 
-    r2 r4 r8 dis b4 dis cis8 b gis a~ a b4. r2 R1
-    \key b \major R1 R1 R1 R1 R1 R1 R1 R1
-    r2 r8 dis,8 fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4. b8 gis2. r4
-    r2 r8 dis fis b b e, e b' b cis cis b cis dis dis fis~ fis4 dis gis,2 cis4 dis
-    e8 dis e dis e4 b8 b~ b ais4. r8 ais b cis fis eis fis eis fis4 cis8 cis~
-    cis b4 fis8 b cis dis e dis4 b b fis8 fis~ fis e4. \times 2/3 {b'4 cis dis}
-    dis2~ dis8 dis4 e8 dis( cis4.~) cis2 R1 R1 R1 R1
-    r2 r8 dis8 e fis fis b, b ais b r8 r4 r2 r8 dis4 e8 cis ais4 b8 cis4 fis, cis'4. r8 r2
-    R1 R1 r8 fis, fis b b ais b cis cis4. b8 b4 ais gis dis' cis4. cis8 ais4 cis b8 fis dis e~ e fis4. r2
-    r4 r8 c g' fis g c \key c \major c4. c,8 g' fis g c~ c c4 c,8 g' fis g c c4 r4 r2
-    r2 r8 e f g g c, c b c2 r2 r4 e8 f d b4 c8 d4 g, d'4. c,8 g' fis g c 
-    c4. c,8 g' fis g c~ c c4 c,8 g' fis g c c g g c c b c d d4. c8 c4 b
-    a e' d4. d8 b4 d c8 g e f~ f g4.~ g2 R1 R1 R1 r4 g8 g a c4.~ c8 b c2. R1 R1 R1 R1 \bar "|."
+    r4 r8 b,\( e dis e b' b4.\) b,8\( e dis e b' b4.\)
+    b,8\( e dis e b' b4\) e,8\( dis e dis' dis e b4. a8 gis4\) r4
+    r2 r8 r16 gis\( a8 b b e, e dis e\) dis'4\( e8 b gis4 a8 b4 e, b'4.\)
+    b,8\( e dis e b' b4.\) b,8\( e dis e b'~ b b4\) b,8\( e dis e b' b\)
+    e,\( e e' e dis e dis dis4. cis8 cis4\) r4 
+    r2 r4 r8 dis\( b4 dis cis8 b gis a~ a b4.\) r2 R1
+    \key b \major R1*8
+    r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4.\) b8\( gis2.\) r4
+    r2 r8 dis\( fis b b e, e b' b cis cis b cis dis dis fis~ fis4\) dis\( gis,2\)
+    cis4\( dis e8 dis e dis e4 b8 b~ b ais4.\)
+    r8 ais\( b cis fis eis fis eis fis4 cis8 cis~ cis b4\)
+    fis8\( b cis dis e dis4 b b fis8 fis~ fis e4.\)
+    \times 2/3 {b'4\( cis dis} dis2~ dis8 dis4 e8 dis( cis4.~) cis2\)
+    R1*4
+    r2 r8 dis8\( e fis fis b, b ais b\)
+    r8 r4 r2 r8 dis4\( e8 cis ais4 b8 cis4 fis, cis'4.\) r8 r2
+    R1 R1 r8 fis,\( fis b b ais b cis cis4. b8 b4\) ais\( gis dis' cis4.\)
+    cis8\( ais4 cis b8 fis dis e~ e fis4.\) r2
+    r4 r8 c\( g' fis g c
+    \key c \major
+    c4.\) c,8\( g' fis g c~ c c4\) c,8\( g' fis g c c4\) r4 r2
+    r2 r8 e\( f g g c, c b c2\) r2 r4 e8\( f d b4 c8 d4 g, d'4.\)
+    c,8\( g' fis g c c4.\) c,8\( g' fis g c~ c c4\)
+    c,8\( g' fis g c c\) g\( g c c b c d d4. c8 c4\)
+    b\( a e' d4.\) d8\( b4 d c8 g e f~ f g4.~ g2\)
+    R1 R1 R1
+    r4 g8\( g a c4.~ c8 b c2.\) R1 R1 R1 R1 \bar "|."
 }
 
 lyricsm = \lyricmode {
