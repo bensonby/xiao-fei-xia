@@ -170,33 +170,71 @@ upper-chorus-two = \relative c'' {
 upper-chorus-three = \relative c' {
   r8 <g c f g>4.-> <f' g c f>4-> <g c f g>-> \key c \major
 
-  << {<g e' g>1~} \\ {r2 <g, d' e>2} >>
-  << {<g' e' g>2 <f c' f>8 e' c g} \\ {<a, c>2} >>
-  <e' g>2~ <e g>8 f e c
-  <g c>8 <g' e' g>4( <f f'>8 <e c' e>4 <c c'>)
+  << {
+    <g e' g>1~\(
+    q2
+    \stemNeutral
+    <f c' f>8 e' c g~\)
+    <e g>2~ <e g>8
+  } \\ {
+    r2 <g, d' e>2\(
+    <a c>2\)
+  } >>
+  f'8\( e c
+  <g c>8\) <g' e' g>4\( <f f'>8 <e c' e>4 <c c'>
   <c f a>1
-  <c e g>4. <e e'>8( <f f'> <g g'> <c c'> <d d'>
-  <e a c e>4. <c c'>8 <g g'>4 <f f'>)
-  r8 <g d' f g>4( <a a'>8 \times 2/3 {<b d g b>4 <c c'> <d d'>}
-  << {<e g c e>2. c'4} \\ {r4 r8 <e,, g c e> <e g c e>4} >>
-  \grace{b''16[ bes a aes]} g4.) <d, g b d>8 <d g b d>4 <d g>
-  <c e a>4 <c c'>8 <b b'> <c c'> <b b'> <c c'> <e e'>
-  << {<b' e b'>2 <g g'>2} \\ {\times 2/3 {r4 <c, c'> <d d'> <e'> <f, f'> <g g'>}} >>
+  <c e g>4.\) <e e'>8\( <f f'> <g g'> <c c'> <d d'>
+  <e a c e>4. <c c'>8 <g g'>4 <f f'>\)
+  r8 << {
+    <g d' f g>4( <a a'>8 \tuplet 3/2 2 {<b d g b>4-> <c c'>-> <d d'>->}
+    <e g c e>2. \stemNeutral c'4
+    \acciaccatura { b32 bes a aes } g4.)
+  } \\ {
+    s4. s2 r4 r8 <e, g c e> q4
+  } >>
+  <d g b d>8\( q4 <d g>\)
+  <c e a>4
+  << {
+    \stemNeutral
+    <c c'>8\( <b b'> <c c'> <b b'> <c c'> <e e'>
+    \stemUp
+    <b' e b'>2 <g g'>\)
+  } \\ {
+    s2.
+    \tuplet 3/2 2 {r4 <c, c'>\( <d d'> e' <f, f'> <g g'>\)}
+  } >>
   <c, f a c>4 <e' a c e>( <d g b d>2)
-  <d, g b>4 <d' f b d>4( \times 2/3 {<c e g c>4)( <g f' g> <e e'>}
-  <c f c'>2) d''2
-  g,2 r
+  <d, g b>4 << {
+    <d' f b d>4\( \tuplet 3/2 2 {<c e g c>4 <g f' g> <e e'>}
+    <c f c'>2\)
+  } \\ {
+    s2.
+    \cl
+    \stemNeutral
+    d,,4.
+    \once \override Glissando #'style = #'dashed-line
+    d'8\glissando
+    \cr
+    d'''2^(
+    g,2)
+  } >>
+  r2
 }
 
-upper-ending = \relative c'''' {
-  s2 \stemUp g2
-  \stemNeutral c, r4 e
-  \grace{d16[ cis]} c1
-  r8 c,, f <c' g'>8~-> <c g'>4 <g e'>
+upper-ending = \relative c''' {
+  << {
+    c2\( g'2
+    \stemNeutral c,2\) 
+  } \\ {
+    r8 c,,_\markup { \italic "L.H." } f <g c>~ q2
+  } >>
+  r4 e''\(
+  \grace{d16[ cis]} c1\)
+  r8 c,,\( f <c' g'>8~-> <c g'>4 <g e'>
   c g \times 2/3 {<c, g'>4 f e}
-  <c f>4_"rit." c' c d
+  <c f>4\) c'\( c d
   e f c' g'~
-  g1 \bar "|."
+  g1\) \bar "|."
 }
 
 lower-intro = \relative c' {
@@ -319,31 +357,37 @@ lower-chorus-two = \relative c, {
 
 lower-chorus-three = \relative c, {
   g8 <g g'>4-> g8 <g g'> <g g'> <g g'> <g g'>  \key c \major
-  c8 g' c d e d c g
-  d c' f a c a f c
-  e, c' e g c g e_3 c_4
-  a e' a4 g,8 e'4 g8
-  f, c' f g a g f c
-  e, c' e g c g e c
-  d, c' f a c4 a8 c
-  g,8 <g g'>4 g8 \times 2/3 {<g g'>4 <d d'> <g, g'>}
-  <c c'>4 g'8 c e c g4
-  <b, b'>8 d'8 g4 b8 g d_3 b_4
-  a8 e'4 a8 a e a a,
-  g g' e g c g e c
-  f, c' f a f, d' g b
-  e,, e' g, gis a_5 e' a e
-  d,4. d'8 r4 e,8 f
-  g2 b'
+  c8\( g' c d e d c g\)
+  d\( c' f a c a f c\)
+  e,\( c' e g c g e_3 c_4\)
+  a\( e' a4\) g,8\( e'4 g8\)
+  f,\( c' f g a g f c\)
+  e,\( c' e g c g e c\)
+  d,\( c' f a c4 a8 c\)
+  g,8 <g g'>4 g8 \tuplet 3/2 2 {<g g'>4-> <d d'>-> <g, g'>->}
+  <c c'>4 g'8_\( c e c g4\)
+  <b, b'>8\( d'8 g4\) b8\( g d_3 b_4\)
+  a8_\( e'4 a8 a e a a,\)
+  g_\( g' e g c g e c\)
+  f,\( c' f a\) f,\( d' g b\)
+  e,,\( e' g, gis a_5 e' a e\)
+  s2
+  r4 e,8_\( f
+  g2 b'\)
 }
 
-lower-ending = \relative c, {
-  << {f2. g8 f} \\ {\cr r8 c'' f <g c>~ <g c>2} >>
-  << {e,,1} \\ {g'8\rest g c g'~ g f e c} >>
-  d,,8( c' f4) g,8( f' b) d,
-  f2.~ f8 f
+lower-ending = \relative c' {
+  << {
+    s1
+    r8 g^\( c g'~ g f e c\)
+  } \\ {
+    \stemNeutral
+    f,,2. g8\( f \stemDown e1\)
+  } >>
+  d8_( c' f4) g,8( f' b) d,\mf\(
+  f2.~ f8 f\mp
   e2~ \times 2/3 {e2 c4}
-  d1
+  d1\)
   g,~
   g \bar "|."
 }
