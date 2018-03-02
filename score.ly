@@ -114,7 +114,7 @@ upper-verse-two = \relative c' {
   <cis e>
   <dis fis>
   r4 << {
-    <fis fis'>\( <gis gis'>4. <ais ais'>8
+    <fis fis'>\(\f <gis gis'>4. <ais ais'>8
     <b dis b'>1\)
   } \\ {
     s4 e8 dis b4
@@ -416,6 +416,16 @@ lower = \relative c {
   \lower-ending
 }
 
+dynamics = {
+  s1\mp s1*22
+  s1\mf s1*14
+  s2 s2\< s1\!\f s1 s4 s2.\> s2\! s2\< s1\! s1 s1\> s1\!
+  s1\mp s1*14 s2 s2\< s1\!
+  s1\mf s1*14 s1\<
+  s1\!\mf s1*15
+  s1\mp s1*4 s1_\markup { \italic "rit." } s1*2
+}
+
 melodyf = \relative c' {
   \clef treble \key e \major \time 4/4
   \override Script #'padding = #2
@@ -568,38 +578,13 @@ lyricsm = \lyricmode {
       \new Staff = "right" {
         \keepWithTag #'written \upper
       }
+      \new Dynamics = "Dynamics_pf" \dynamics
       \new Staff = "left" {
         \keepWithTag #'written \lower
       }
     >>
   >>
   \layout {
-    \context {
-      \type "Engraver_group"
-      \name Dynamics
-      \alias Voice
-      \consists "Output_property_engraver"
-      \consists "Piano_pedal_engraver"
-      \consists "Script_engraver"
-      \consists "New_dynamic_engraver"
-      \consists "Dynamic_align_engraver"
-      \consists "Text_engraver"
-      \consists "Skip_event_swallow_translator"
-      \consists "Axis_group_engraver"
-
-
-      \override DynamicLineSpanner #'Y-offset = #0
-      \override TextScript #'font-size = #2
-      \override TextScript #'font-shape = #'italic
-      \override VerticalAxisGroup #'minimum-Y-extent = #'(-1 . 1)
-    }
-    \context {
-      \RemoveEmptyStaffContext
-    }
-    % \context {
-      % \Score
-      % \override VerticalAxisGroup #'remove-first = ##t
-    % }
   }
 }
 \score {
@@ -620,6 +605,7 @@ lyricsm = \lyricmode {
       \new Staff = "right" {
         \articulate << \keepWithTag #'midi \upper >>
       }
+      \new Dynamics = "Dynamics_pf" \dynamics
       \new Staff = "left" {
         \articulate << \keepWithTag #'midi \lower >>
       }
