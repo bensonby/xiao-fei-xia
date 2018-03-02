@@ -605,13 +605,15 @@ lyricsm = \lyricmode {
 }
 \score {
   \new StaffGroup <<
-    \new Staff <<
-      \set Staff.fontSize = #-2
-      \override StaffSymbol #'staff-space = #(magstep -3)
-      \set Staff.midiInstrument = #"oboe"
-      \new Voice = "Female" { \voiceOne \melodyf }
-      \new Voice = "Male" { \voiceTwo \melodym }
-    >>
+    \new Staff {
+      \articulate <<
+        \set Staff.fontSize = #-2
+        \override StaffSymbol #'staff-space = #(magstep -3)
+        \set Staff.midiInstrument = #"oboe"
+        \new Voice = "Female" { \voiceOne \transpose c c' { \melodyf }}
+        \new Voice = "Male" { \voiceTwo \transpose c c' { \melodym }}
+      >>
+    }
     \context Lyrics = soprano { s1}
     \context Lyrics = tenor {s1}
     \context Lyrics = soprano \lyricsto Female \lyricsf
