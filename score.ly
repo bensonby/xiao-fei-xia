@@ -454,7 +454,9 @@ melodyf = \relative c' {
   \clef treble \key e \major \time 4/4
   \override Script #'padding = #2
 
+  \override MultiMeasureRest.staff-position = #0
   R1*6
+  \revert MultiMeasureRest.staff-position
 
   r2 r8 gis\( b e e a, a gis a e' fis e fis gis gis b,~ b4.\) dis8\( cis2\) r2
   r2 r8 gis\( b e e a, a e' e fis fis e fis gis gis b~ b4\) gis\( cis,2\)
@@ -467,8 +469,11 @@ melodyf = \relative c' {
   gis\( a b b e, e dis e\) r r4 r2 r8
   gis4\( a8 fis dis4 e8 fis4 b, fis'4.\) r8 r2
   R1 R1 r8 b,\( b e e dis e fis fis4. e8 e4\) dis\( cis gis' fis4.\)
-  fis8\( dis4 fis e8 b gis a~ a b4.\) r2 R1
+  fis8\( dis4 fis e8 b gis a~ a b4.\) r2
+  \override MultiMeasureRest.staff-position = #0
+  R1
   \key b \major R1*15
+  \revert MultiMeasureRest.staff-position
   r2 e4\( fis gis8 fis gis fis gis4 e8 dis~ dis cis4.\)
   r8 dis\( e fis ais gisis ais gisis ais4 fis8 e~ e dis4\) r8 r2
   R1 r2 \times 2/3 {e4\( fis gis} gis2~ gis8 gis4 b8 gis( fis4.~) fis2\)
@@ -486,7 +491,9 @@ melodyf = \relative c' {
   g,8\( c b c g' g4.\) g,8\( c b c g'~ g g4\)
   g,8\( c b c g' g c, c c' c b c b b4. a8 a4\)
   r4 r2 r4 r8 b\( g4 b a8 g e f~ f g4.~ g2\)
-  r4 f8\( e f e4. c8 c4.~ c2\) R1 r4
+  r4 f8\( e f e4. c8 c4.~ c2\)
+  \override MultiMeasureRest.staff-position = #0
+  R1 r4
   g'8\( g a c4.~ c8 b c2.\) R1 R1 R1 R1 \bar "|."
 }
 
@@ -526,16 +533,16 @@ lyricsf = \lyricmode {
 
 melodym = \relative c' {
     \clef "treble_8" \key e \major \time 4/4
-    R1 R1 R1 R1 R1 R1
-    R1 R1 R1 R1 R1 R1 R1 R1
-    R1 R1 R1 R1 R1 R1 R1 R1
+    s1*6
+    R1*8
+    R1*8
     r4 r8 b,\( e dis e b' b4.\) b,8\( e dis e b' b4.\)
     b,8\( e dis e b' b4\) e,8\( dis e dis' dis e b4. a8 gis4\) r4
     r2 r8 r16 gis\( a8 b b e, e dis e\) dis'4\( e8 b gis4 a8 b4 e, b'4.\)
     b,8\( e dis e b' b4.\) b,8\( e dis e b'~ b b4\) b,8\( e dis e b' b\)
     e,\( e e' e dis e dis dis4. cis8 cis4\) r4 
-    r2 r4 r8 dis\( b4 dis cis8 b gis a~ a b4.\) r2 R1
-    \key b \major R1*8
+    r2 r4 r8 dis\( b4 dis cis8 b gis a~ a b4.\) r2 s1
+    \key b \major s1*8
     r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4.\) ais8\( gis2.\) r4
     r2 r8 dis\( fis b b e, e b' b cis cis b cis dis dis fis~ fis4\) dis\( gis,2\)
     cis4\( dis e8 dis e dis e4 b8 b~ b ais4.\)
@@ -554,8 +561,8 @@ melodym = \relative c' {
     c,8\( g' fis g c c4.\) c,8\( g' fis g c~ c c4\)
     c,8\( g' fis g c c\) g\( g c c b c d d4. c8 c4\)
     b\( a e' d4.\) d8\( b4 d c8 g e f~ f g4.~ g2\)
-    R1 R1 R1
-    r4 g8\( g a c4.~ c8 b c2.\) R1 R1 R1 R1 \bar "|."
+    R1 R1 s1
+    r4 g8\( g a c4.~ c8 b c2.\) s1*4 \bar "|."
 }
 
 lyricsm = \lyricmode {
