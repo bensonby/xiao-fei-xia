@@ -73,7 +73,7 @@ upper-chorus-one = \relative c'' {
   r2 <gis gis'>4( <fis fis'>)
   r4 <cis' e>8\( <b dis> <cis e> <b dis> <gis b>4\)
   <cis e>8\( <b dis> <cis e> <b dis> <cis e> <b dis> <gis b>4\)
-  <cis e>8( <b dis> <cis e> <b dis> <cis e> <b dis> <cis^3 e^5> <e^1 gis^2>
+  <cis e>8( <b dis> <cis e> <b dis> <cis e> <b dis> <cis e> <e gis>
   <e gis dis'>2 <dis gis b>4) dis'(
   cis) <gis, cis gis'>( <fis b fis'>2)
   r4 << {
@@ -327,7 +327,7 @@ lower-episode = \relative c {
   cis8 cis' <gis' gis'>4-- <ais ais'>-- <gis gis'>--
   <b,, b'>8 fis''( ais cis) b,\( cis dis e\)
   <e, e'>4. e'8( <gis b>4) <e, e'>4
-  <dis dis'>4. b'8\( <fis' b>8 b, fis_3 dis_4\)
+  <dis dis'>4. b'8\( <fis' b>8 b, fis dis\)
   <cis cis'>8\( gis' e' gis cis gis cis,_1 cis,
   <fis, fis'>2\) r2
 }
