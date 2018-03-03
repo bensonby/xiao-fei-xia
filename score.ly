@@ -131,7 +131,13 @@ upper-verse-two = \relative c' {
     e,8\( dis e dis e fis gis b
     <cis, fis dis'>4. <cis fis cis'>8~ <cis fis cis'>4\)
   } >>
-  ais'4\( \acciaccatura {a16 gis g} fis4 fis, <cis fis ais>4 <cis' fis cis'>
+  \tag #'written {
+    ais'4\( \acciaccatura {a16 gis g}
+  }
+  \tag #'midi {
+    ais8\( \tuplet 3/2 { a16 gis g}
+  }
+  fis4 fis, <cis fis ais>4 <cis' fis cis'>
   <b dis b'>1\)
   r4 <b, e gis>( \times 2/3 {<b e ais>4 b' cis}
   <cis, e cis'>4 <b e b'>) \times 2/3 {<e gis b e>4->( <fis ais cis fis>-> <gis b dis gis>->}
@@ -187,8 +193,10 @@ upper-chorus-three = \relative c' {
   <e a c e>4. <c c'>8 <g g'>4 <f f'>\)
   r8 << {
     <g d' f g>4( <a a'>8 \tuplet 3/2 2 {<b d g b>4-> <c c'>-> <d d'>->}
-    <e g c e>2. \stemNeutral c'4
-    \acciaccatura { b32 bes a aes } g4.)
+    <e g c e>2. \stemNeutral
+    \tag #'written { c'4 \acciaccatura { b32 bes a aes }}
+    \tag #'midi { c8 b32 bes a aes }
+    g4.)
   } \\ {
     s4. s2 r4 r8 <e, g c e> q4
   } >>
@@ -232,9 +240,28 @@ upper-ending = \relative c''' {
   \grace{d16[ cis]} c1\)
   r8 c,,\( f <c' g'>8~-> <c g'>4 <g e'>
   c g \times 2/3 {<c, g'>4 f e}
-  <c f>4\) c'\( c d
-  e f c' g'~
-  g1\) \bar "|."
+  \tag #'written {
+    <c f>4\) c'\( c d
+    e f c' g'~ g1\) 
+  }
+  \tag #'midi {
+    \tempo 4 = 105
+    <c,,, f>4\)
+    \tempo 4 = 103
+    c'\(
+    \tempo 4 = 101
+    c
+    \tempo 4 = 97
+    d
+    \tempo 4 = 88
+    e
+    \tempo 4 = 79
+    f
+    \tempo 4 = 66
+    c'
+    g'~ g1\) 
+  }
+  \bar "|."
 }
 
 lower-intro = \relative c' {
