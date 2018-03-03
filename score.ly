@@ -205,7 +205,7 @@ upper-chorus-three = \relative c' {
   } >>
   <c, f a c>4 <e' a c e>( <d g b d>2)
   <d, g b>4 << {
-    <d' f b d>4\( \tuplet 3/2 2 {<c e g c>4 <g f' g> <e e'>}
+    <d' g b d>4\( \tuplet 3/2 2 {<c e g c>4 <g f' g> <e e'>}
     <c f c'>2\)
   } \\ {
     s2.
