@@ -3,9 +3,6 @@
 \include "merge-rest.ly"
 #(set-global-staff-size 15)
 
-% check female 幼嫩 pitch
-% resolve collision (accent + slur)
-
 cr = \change Staff = "right"
 cl = \change Staff = "left"
 rhMark = \markup { 
@@ -192,7 +189,8 @@ upper-chorus-three = \relative c' {
   <c e g>4.\) <e e'>8\( <f f'> <g g'> <c c'> <d d'>
   <e a c e>4. <c c'>8 <g g'>4 <f f'>\)
   r8 << {
-    <g d' f g>4( <a a'>8 \tuplet 3/2 2 {<b d g b>4-> <c c'>-> <d d'>->}
+    <g d' f g>4( <a a'>8
+    \tuplet 3/2 2 {<b d g b>4_> <c c'>_> <d d'>_>}
     <e g c e>2. \stemNeutral
     \tag #'written { c'4 \acciaccatura { b32 bes a aes }}
     \tag #'midi { c8 b32 bes a aes }
