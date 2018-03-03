@@ -616,8 +616,6 @@ lyricsm = \lyricmode {
       \override RestCollision.positioning-done = #merge-rests-on-positioning
     } <<
       \set Staff.instrumentName = #"Voices"
-      \set Staff.fontSize = #-2
-      \override StaffSymbol #'staff-space = #(magstep -3)
       \set Staff.midiInstrument = #"oboe"
       \new Voice = "Female" { \voiceOne \melodyf }
       \new Voice = "Male" { \voiceTwo \melodym }
@@ -643,18 +641,13 @@ lyricsm = \lyricmode {
 \score {
   \new StaffGroup <<
     \new Staff {
-      \articulate <<
-        \set Staff.fontSize = #-2
-        \override StaffSymbol #'staff-space = #(magstep -3)
-        \set Staff.midiInstrument = #"oboe"
-        \new Voice = "Female" { \voiceOne \transpose c c' { \melodyf }}
-        \new Voice = "Male" { \voiceTwo \transpose c c' { \melodym }}
-      >>
+      \set Staff.midiInstrument = "oboe"
+      \articulate << \transpose c c' { \melodyf } >>
     }
-    \context Lyrics = soprano { s1}
-    \context Lyrics = tenor {s1}
-    \context Lyrics = soprano \lyricsto Female \lyricsf
-    \context Lyrics = tenor \lyricsto Male \lyricsm
+    \new Staff {
+      \set Staff.midiInstrument = "recorder"
+      \articulate << \transpose c c' { \melodym } >>
+    }
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
       \new Staff = "right" {
