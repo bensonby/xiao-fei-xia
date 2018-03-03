@@ -1,10 +1,7 @@
 \version "2.18.2"
 \include "articulate.ly"
+\include "merge-rest.ly"
 #(set-global-staff-size 15)
-
-% TODO
-% merge rests from two voices, hide rest for solo at first verse?
-% add phrasing slur for voices
 
 cr = \change Staff = "right"
 cl = \change Staff = "left"
@@ -607,7 +604,9 @@ lyricsm = \lyricmode {
 \score {
   \new StaffGroup <<
     \new Staff \with {
-      \consists "Merge_rests_engraver"
+      % use built in feature when on version 2.19
+      % \consists "Merge_rests_engraver"
+      \override RestCollision.positioning-done = #merge-rests-on-positioning
     } <<
       \set Staff.instrumentName = #"Voices"
       \set Staff.fontSize = #-2
