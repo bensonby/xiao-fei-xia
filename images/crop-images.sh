@@ -1,0 +1,9 @@
+convert 1.png -crop 1530x944+210+75 -gravity center -extent 1920x1080 p1.png
+convert 2.png -crop 1530x890+210+75 -gravity center -extent 1920x1080 p2.png
+convert 3.png -crop 1530x1005+210+75 -gravity center -extent 1920x1080 p3.png
+convert 4.png -crop 1530x911+210+75 -gravity center -extent 1920x1080 p4.png
+convert 5.png -crop 1530x834+210+75 -gravity center -extent 1920x1080 p5.png
+convert 6.png -crop 1530x1005+210+75 -gravity center -extent 1920x1080 p6.png
+convert 7.png -crop 1530x1005+210+75 -gravity center -extent 1920x1080 p7.png
+convert 8.png -crop 1530x1005+210+75 -gravity center -extent 1920x1080 p8.png
+convert 9.png -crop 1530x1005+210+75 -gravity center -extent 1920x1080 p9.png
