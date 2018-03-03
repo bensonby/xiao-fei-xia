@@ -539,7 +539,7 @@ melodym = \relative c' {
     e,\( e e' e dis e dis dis4. cis8 cis4\) r4 
     r2 r4 r8 dis\( b4 dis cis8 b gis a~ a b4.\) r2 R1
     \key b \major R1*8
-    r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4.\) b8\( gis2.\) r4
+    r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4.\) ais8\( gis2.\) r4
     r2 r8 dis\( fis b b e, e b' b cis cis b cis dis dis fis~ fis4\) dis\( gis,2\)
     cis4\( dis e8 dis e dis e4 b8 b~ b ais4.\)
     r8 ais\( b cis fis eis fis eis fis4 cis8 cis~ cis b4\)
