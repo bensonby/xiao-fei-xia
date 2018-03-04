@@ -15,6 +15,9 @@ ffmpeg -i score-with-vocal.wav -i score-without-vocal.wav -filter_complex "[0:a]
 # fix balance between channels
 # Audacity "Amplify" with-vocal track by 7.
 
+# Add reverb
+# Bathroom, default
+
 # create video
 ffmpeg -i result.wav -f concat -i ffmpeg-image-info.txt -ss 0 -t 3:53.53 video.mp4
 ```
