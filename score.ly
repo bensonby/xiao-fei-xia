@@ -485,7 +485,10 @@ melodyf = \relative c' {
   R1
   \key b \major R1*8
   \revert MultiMeasureRest.staff-position
-  R1*7
+  R1*6
+  \override MultiMeasureRest.staff-position = #7
+  R1
+  \revert MultiMeasureRest.staff-position
   r2 e4\( fis gis8 fis gis fis gis4 e8 dis~ dis cis4.\)
   r8 dis\( e fis ais gisis ais gisis ais4 fis8 e~ e dis4\) r8 r2
   R1 r2 \times 2/3 {e4\( fis gis} gis2~ gis8 gis4 b8 gis( fis4.)\) r2
