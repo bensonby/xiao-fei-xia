@@ -644,19 +644,27 @@ lyricsm = \lyricmode {
   \new StaffGroup <<
     \new Staff {
       \set Staff.midiInstrument = "oboe"
+      \set Staff.midiMinimumVolume = #0.3
+      \set Staff.midiMaximumVolume = #0.4
       \articulate << \transpose c c' { \melodyf } >>
     }
     \new Staff {
       \set Staff.midiInstrument = "recorder"
+      \set Staff.midiMinimumVolume = #1
+      \set Staff.midiMaximumVolume = #1
       \articulate << \transpose c c' { \melodym } >>
     }
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
       \new Staff = "right" {
+        \set Staff.midiMinimumVolume = #0.4
+        \set Staff.midiMaximumVolume = #0.5
         \articulate << \keepWithTag #'midi \upper >>
       }
       \new Dynamics = "Dynamics_pf" \dynamics
       \new Staff = "left" {
+        \set Staff.midiMinimumVolume = #0.4
+        \set Staff.midiMaximumVolume = #0.5
         \articulate << \keepWithTag #'midi \lower >>
       }
     >>
