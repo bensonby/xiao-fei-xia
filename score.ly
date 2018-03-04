@@ -617,6 +617,103 @@ lyricsm = \lyricmode {
   能 回 味 也 是 暖
 }
 
+pedals = {
+  s1\sustainOn
+  \repeat unfold 5 { s2\sustainOff\sustainOn }
+  s1\sustainOff\sustainOn
+  \repeat unfold 3 { s2\sustainOff\sustainOn }
+
+  % verse 1
+  \repeat unfold 8 { s1\sustainOff\sustainOn }
+  \repeat unfold 8 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 2 { s1\sustainOff\sustainOn }
+  s1\sustainOff
+
+  % chorus 1
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 6 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 6 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 1 { s2\sustainOff\sustainOn }
+  s2\sustainOff
+
+  % episode
+  \repeat unfold 14 { s2\sustainOff\sustainOn }
+  s1\sustainOff
+
+  % verse 2
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 1 { s2\sustainOff\sustainOn }
+  \repeat unfold 2 { s4\sustainOff\sustainOn }
+  \repeat unfold 12 { s2\sustainOff\sustainOn }
+  \repeat unfold 2 { s1\sustainOff\sustainOn }
+  s1\sustainOff
+
+  % chorus 2
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 6 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 1 { s2\sustainOff\sustainOn }
+  \repeat unfold 2 { s4\sustainOff\sustainOn }
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 6 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+
+  % chorus 3
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 1 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 3 { s1\sustainOff\sustainOn }
+  \repeat unfold 6 { s2\sustainOff\sustainOn }
+
+  % ending
+  \repeat unfold 4 { s1\sustainOff\sustainOn }
+  \repeat unfold 2 { s2\sustainOff\sustainOn }
+  \repeat unfold 4 { s1\sustainOff\sustainOn }
+  s1\sustainOff
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \paper {
   oddFooterMarkup = \markup { \fill-line { "https://music.bensonby.me" }}
   evenFooterMarkup = \markup { \fill-line { "https://music.bensonby.me" }}
@@ -679,13 +776,13 @@ lyricsm = \lyricmode {
       \new Staff = "right" {
         \set Staff.midiMinimumVolume = #0.4
         \set Staff.midiMaximumVolume = #0.5
-        \articulate << \keepWithTag #'midi \upper >>
+        \articulate << \keepWithTag #'midi \upper \pedals >>
       }
       \new Dynamics = "Dynamics_pf" \dynamics
       \new Staff = "left" {
         \set Staff.midiMinimumVolume = #0.4
         \set Staff.midiMaximumVolume = #0.5
-        \articulate << \keepWithTag #'midi \lower >>
+        \articulate << \keepWithTag #'midi \lower \pedals >>
       }
     >>
   >>
