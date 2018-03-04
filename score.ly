@@ -459,12 +459,22 @@ melodyf = \relative c' {
   R1*6
   \revert MultiMeasureRest.staff-position
 
-  r2 r8 gis\( b e e a, a gis a e' fis e fis gis gis b,~ b4.\) dis8\( cis2\) r2
-  r2 r8 gis\( b e e a, a e' e fis fis e fis gis gis b~ b4\) gis\( cis,2\)
+  r2 r8 gis\( b e e a, a gis a e' fis e fis gis gis
+  \tag #'written { b,~ b4.\) }
+  \tag #'midi { b8~ b4\) r8 }
+  dis8\( cis2\) r2
+  r2 r8 gis\( b e e a, a e' e fis fis e fis gis gis b~ b4\) gis\(
+  \tag #'written { cis,2\) }
+  \tag #'midi { cis4\) r }
   fis4\( gis a8 gis a gis a4 e8 e~ e dis4.\)
   r8 dis\( e fis b ais b ais b4 fis8 fis~ fis e4\)
-  b8\( e fis gis a gis4 e e b8 b~ b a4.\)
-  \times 2/3 {e'4\( fis gis} gis2. a4 fis2\) r2 R1
+  b8\( e fis gis a gis4 e e b8 b~ b
+  \tag #'written { a4.\) }
+  \tag #'midi { a4\) r8 }
+  \times 2/3 {e'4\( fis gis}
+  \tag #'written { gis2. }
+  \tag #'midi { gis2~ gis8 r }
+  a4 fis2\) r2 R1
 
   R1 R1 R1 r2 r8
   gis\( a b b e, e dis e\) r r4 r2 r8
@@ -478,7 +488,7 @@ melodyf = \relative c' {
   R1*7
   r2 e4\( fis gis8 fis gis fis gis4 e8 dis~ dis cis4.\)
   r8 dis\( e fis ais gisis ais gisis ais4 fis8 e~ e dis4\) r8 r2
-  R1 r2 \times 2/3 {e4\( fis gis} gis2~ gis8 gis4 b8 gis( fis4.~) fis2\)
+  R1 r2 \times 2/3 {e4\( fis gis} gis2~ gis8 gis4 b8 gis( fis4.)\) r2
   r4 r8 fis,\( b ais b fis' fis4.\) fis,8\( b ais b fis'~ fis fis4\)
   fis,8\( b ais b fis' fis4\) b,8\( ais b ais' ais b fis4. e8 dis4\) r
   r2 r8 r16 dis16\( e8 fis fis b, b ais b\) ais'4\( b8 fis dis4 e8 fis4 b, fis'4.\)
@@ -492,8 +502,8 @@ melodyf = \relative c' {
   b'\( c g e4 f8 g4 c, g'4.\)
   g,8\( c b c g' g4.\) g,8\( c b c g'~ g g4\)
   g,8\( c b c g' g c, c c' c b c b b4. a8 a4\)
-  r4 r2 r4 r8 b\( g4 b a8 g e f~ f g4.~ g2\)
-  r4 f8\( e f e4. c8 c4.~ c2\)
+  r4 r2 r4 r8 b\( g4 b a8 g e f~ f g4.\) r2
+  r4 f8\( e f e4. c8 c4.\) r2
   \override MultiMeasureRest.staff-position = #0
   R1 r4
   g'8\( g a c4.~ c8 b c2.\) R1 R1 R1 R1 \bar "|."
@@ -545,12 +555,19 @@ melodym = \relative c' {
     e,\( e e' e dis e dis dis4. cis8 cis4\) r4 
     r2 r4 r8 dis\( b4 dis cis8 b gis a~ a b4.\) r2 s1
     \key b \major s1*8
-    r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis fis,8~ fis4.\) ais8\( gis2.\) r4
-    r2 r8 dis\( fis b b e, e b' b cis cis b cis dis dis fis~ fis4\) dis\( gis,2\)
+    r2 r8 dis,8\( fis b b e, e dis e b' cis b cis dis dis
+    \tag #'written { fis,8~ fis4.\) }
+    \tag #'midi { fis8~ fis4\) r8 }
+    ais8\( gis2.\) r4
+    r2 r8 dis\( fis b b e, e b' b cis cis b cis dis dis fis~ fis4\) dis\(
+    \tag #'written { gis,2\) }
+    \tag #'midi { gis4\) r }
     cis4\( dis e8 dis e dis e4 b8 b~ b ais4.\)
     r8 ais\( b cis fis eis fis eis fis4 cis8 cis~ cis b4\)
-    fis8\( b cis dis e dis4 b b fis8 fis~ fis e4.\)
-    \times 2/3 {b'4\( cis dis} dis2~ dis8 dis4 e8 dis( cis4.~) cis2\)
+    fis8\( b cis dis e dis4 b b fis8 fis~ fis
+    \tag #'written { e4.\) }
+    \tag #'midi { e4\) r8 }
+    \times 2/3 {b'4\( cis dis} dis2~ dis8 dis4 e8 dis( cis4.)\) r2
     R1*4
     r2 r8 dis8\( e fis fis b, b ais b\)
     r8 r4 r2 r8 dis4\( e8 cis ais4 b8 cis4 fis, cis'4.\) r8 r2
@@ -562,7 +579,7 @@ melodym = \relative c' {
     r2 r8 e\( f g g c, c b c2\) r2 r4 e8\( f d b4 c8 d4 g, d'4.\)
     c,8\( g' fis g c c4.\) c,8\( g' fis g c~ c c4\)
     c,8\( g' fis g c c\) g\( g c c b c d d4. c8 c4\)
-    b\( a e' d4.\) d8\( b4 d c8 g e f~ f g4.~ g2\)
+    b\( a e' d4.\) d8\( b4 d c8 g e f~ f g4.\) r2
     R1 R1 s1
     r4 g8\( g a c4.~ c8 b c2.\) s1*4 \bar "|."
 }
@@ -619,8 +636,8 @@ lyricsm = \lyricmode {
     } <<
       \set Staff.instrumentName = #"Voices"
       \set Staff.midiInstrument = #"oboe"
-      \new Voice = "Female" { \voiceOne \melodyf }
-      \new Voice = "Male" { \voiceTwo \melodym }
+      \new Voice = "Female" { \voiceOne \keepWithTag #'written \melodyf }
+      \new Voice = "Male" { \voiceTwo \keepWithTag #'written \melodym }
     >>
     \context Lyrics = soprano { s1}
     \context Lyrics = tenor {s1}
@@ -646,13 +663,13 @@ lyricsm = \lyricmode {
       \set Staff.midiInstrument = "oboe"
       \set Staff.midiMinimumVolume = #0.3
       \set Staff.midiMaximumVolume = #0.4
-      \articulate << \transpose c c' { \melodyf } >>
+      \articulate << \transpose c c' { \keepWithTag #'midi \melodyf } >>
     }
     \new Staff {
       \set Staff.midiInstrument = "recorder"
       \set Staff.midiMinimumVolume = #1
       \set Staff.midiMaximumVolume = #1
-      \articulate << \transpose c c' { \melodym } >>
+      \articulate << \transpose c c' { \keepWithTag #'midi \melodym } >>
     }
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
