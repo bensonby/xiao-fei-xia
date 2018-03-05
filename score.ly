@@ -767,8 +767,8 @@ pedals = {
     }
     \new Staff {
       \set Staff.midiInstrument = "recorder"
-      \set Staff.midiMinimumVolume = #1
-      \set Staff.midiMaximumVolume = #1
+      \set Staff.midiMinimumVolume = #0.7
+      \set Staff.midiMaximumVolume = #0.8
       \articulate << \transpose c c' { \keepWithTag #'midi \melodym } >>
     }
     \new PianoStaff <<

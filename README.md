@@ -13,7 +13,7 @@ timidity --output-24bit -Ow score.midi
 ffmpeg -i score-with-vocal.wav -i score-without-vocal.wav -filter_complex "[0:a][1:a]amerge=inputs=2,pan=stereo|c0<c0+c1|c1<c2+c3[aout]" -map "[aout]" result.wav
 
 # fix balance between channels
-# Audacity "Amplify" with-vocal track by 7.
+# Audacity "Amplify" with-vocal track by 6.
 
 # Add reverb
 # Bathroom, default
